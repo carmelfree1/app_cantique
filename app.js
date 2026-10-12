@@ -1,8 +1,6 @@
 (() => {
 'use strict';
-const SONGS = window.CANTIQUES, CATS = window.CATS;
-const BY = new Map(SONGS.map(s => [s.n, s]));
-const NUMS = SONGS.map(s => s.n);
+let SONGS, CATS, BY, NUMS;
 
 // ---------- utilitaires ----------
 const $ = s => document.querySelector(s);
@@ -43,10 +41,6 @@ function applyPrefs() {
 matchMedia('(prefers-color-scheme:dark)').addEventListener?.('change', applyPrefs);
 
 // ---------- recherche ----------
-for (const s of SONGS) {
-  s.nt = norm(s.t);
-  s.nb = norm(s.s.map(b => b[1].join(' ')).join(' '));
-}
 function search(q) {
   const nq = norm(q);
   if (!nq) return [];
@@ -303,7 +297,13 @@ addEventListener('keydown', e => {
 
 // ---------- démarrage et PWA ----------
 applyPrefs();
-route();
+fetch('cantiques.json').then(r => r.json()).then(d => {
+  SONGS = d.cantiques; CATS = d.categories;
+  BY = new Map(SONGS.map(s => [s.n, s]));
+  NUMS = SONGS.map(s => s.n);
+  for (const s of SONGS) { s.nt = norm(s.t); s.nb = norm(s.s.map(b => b[1].join(' ')).join(' ')); }
+  route();
+}).catch(() => { view.innerHTML = '<div class="empty">Impossible de charger cantiques.json.<br>Ouvrez le site via un serveur web (http), pas directement le fichier.</div>'; });
 if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
   addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 }

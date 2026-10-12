@@ -1,5 +1,5 @@
-const CACHE = 'cantiques-v1';
-const ASSETS = ['./', 'index.html', 'style.css', 'app.js', 'data.js', 'manifest.webmanifest',
+const CACHE = 'cantiques-v2';
+const ASSETS = ['./', 'index.html', 'style.css', 'app.js', 'cantiques.json', 'manifest.webmanifest',
   'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png'];
 
 self.addEventListener('install', e => {
