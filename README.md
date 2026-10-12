@@ -15,3 +15,8 @@ HTML + CSS + JavaScript, sans serveur ni SQL : toutes les données sont dans `ca
 Aucune compilation : copiez ces fichiers tels quels sur n'importe quel hébergement statique
 (GitHub Pages, Netlify, serveur web classique...), en HTTPS pour l'installation et le mode hors ligne.
 
+
+## Test en local
+Double-cliquer sur `index.html` fonctionne (les données sont lues dans `cantiques.local.js`, copie de `cantiques.json`
+utilisée uniquement hors serveur). Si vous modifiez `cantiques.json`, recopiez son contenu dans `cantiques.local.js`
+sous la forme `window.__CANTIQUES=<contenu>;`. L'installation PWA et le hors-ligne nécessitent HTTPS.

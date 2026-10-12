@@ -297,13 +297,18 @@ addEventListener('keydown', e => {
 
 // ---------- démarrage et PWA ----------
 applyPrefs();
-fetch('cantiques.json').then(r => r.json()).then(d => {
+// En ligne : fetch du JSON. En ouvrant le fichier directement (file://), fetch est bloqué :
+// on charge alors cantiques.local.js, qui contient exactement les mêmes données.
+const loadData = () => location.protocol === 'file:'
+  ? new Promise((ok, ko) => { const s = document.createElement('script'); s.src = 'cantiques.local.js'; s.onload = () => ok(window.__CANTIQUES); s.onerror = ko; document.head.appendChild(s); })
+  : fetch('cantiques.json').then(r => r.json());
+loadData().then(d => {
   SONGS = d.cantiques; CATS = d.categories;
   BY = new Map(SONGS.map(s => [s.n, s]));
   NUMS = SONGS.map(s => s.n);
   for (const s of SONGS) { s.nt = norm(s.t); s.nb = norm(s.s.map(b => b[1].join(' ')).join(' ')); }
   route();
-}).catch(() => { view.innerHTML = '<div class="empty">Impossible de charger cantiques.json.<br>Ouvrez le site via un serveur web (http), pas directement le fichier.</div>'; });
+}).catch(() => { view.innerHTML = '<div class="empty">Impossible de charger les cantiques.</div>'; });
 if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
   addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 }
