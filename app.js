@@ -1,6 +1,6 @@
 (() => {
 'use strict';
-let SONGS, CATS, BY, NUMS;
+let SONGS, CATS, BY, NUMS, MAX = 935;
 
 // ---------- utilitaires ----------
 const $ = s => document.querySelector(s);
@@ -8,8 +8,8 @@ const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','
 const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’‘`]/g, "'").replace(/œ/g, 'oe').replace(/[^a-z0-9' ]+/g, ' ').replace(/\s+/g, ' ').trim();
 const pad = n => String(n).padStart(3, '0');
 const store = {
-  get(k, d) { try { const v = localStorage.getItem('cq.' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
-  set(k, v) { try { localStorage.setItem('cq.' + k, JSON.stringify(v)); } catch {} }
+  get(k, d) { try { const v = localStorage.getItem('cq.' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('cq.' + k, JSON.stringify(v)); } catch (e) {} }
 };
 const ICON = {
   home: '<path d="M3 11l9-8 9 8M5 10v10h14V10"/>', list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
@@ -38,7 +38,28 @@ function applyPrefs() {
   if (prefs.theme === 'auto') r.setAttribute('data-theme', dark ? 'dark' : 'sepia');
   document.querySelector('meta[name=theme-color]').content = dark ? '#1b1b1f' : '#7a1f2b';
 }
-matchMedia('(prefers-color-scheme:dark)').addEventListener?.('change', applyPrefs);
+try { const mq = matchMedia('(prefers-color-scheme:dark)'); (mq.addEventListener ? mq.addEventListener('change', applyPrefs) : mq.addListener && mq.addListener(applyPrefs)); } catch (e) {}
+
+// ---------- installation de l'application (PWA) ----------
+let deferredPrompt = null;
+const UA = navigator.userAgent || '';
+const isStandalone = () => (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+const isIOS = /iphone|ipad|ipod/i.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const isSafariIOS = isIOS && /safari/i.test(UA) && !/crios|fxios|edgios|opios|gsa\/|fbios|instagram/i.test(UA);
+const inAppBrowser = /FBAN|FBAV|FB_IAB|Instagram|Line\/|MicroMessenger|Snapchat|TikTok|Twitter|; wv\)|Telegram|GSA\//i.test(UA) || (isIOS && !/safari/i.test(UA));
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; refreshInstall(); });
+window.addEventListener('appinstalled', () => { deferredPrompt = null; toast('Application installée ✓'); refreshInstall(); });
+function installCard() {
+  if (isStandalone() || store.get('hideInstall', false)) return '';
+  let msg, btn = '';
+  if (deferredPrompt) { msg = 'Installez l’application pour la lire hors ligne, comme un livre.'; btn = '<button class="btn" data-act="install">Installer</button>'; }
+  else if (inAppBrowser) msg = 'Pour installer l’application, ouvrez ce lien dans <b>Chrome</b> ou <b>Safari</b> (menu ⋮ ou ⎋ → « Ouvrir dans le navigateur »).';
+  else if (isSafariIOS) msg = 'Pour installer sur iPhone / iPad : touchez <b>Partager</b> (le carré avec la flèche) puis <b>« Sur l’écran d’accueil »</b>.';
+  else if (isIOS) msg = 'Sur iPhone / iPad, ouvrez ce site dans <b>Safari</b> pour pouvoir l’installer.';
+  else msg = 'Pour installer : menu du navigateur (⋮) → <b>« Installer l’application »</b> ou <b>« Ajouter à l’écran d’accueil »</b>.';
+  return `<div class="install" id="install"><div>${msg}</div>${btn}<button class="x2" data-act="hideinstall" aria-label="Masquer">✕</button></div>`;
+}
+function refreshInstall() { const el = document.getElementById('install'); if (el) el.outerHTML = installCard(); }
 
 // ---------- recherche ----------
 function search(q) {
@@ -98,13 +119,14 @@ function viewHome() {
   const last = store.get('last');
   const lastS = last && BY.get(last);
   const ranges = [];
-  for (let a = 1; a <= 884; a += 100) ranges.push(`<a href="#/serie/${a}">${pad(a)}–${Math.min(a + 99, 884)}</a>`);
+  for (let a = 1; a <= MAX; a += 100) ranges.push(`<a href="#/serie/${a}">${pad(a)}–${Math.min(a + 99, MAX)}</a>`);
   view.innerHTML = `
-    <div class="search"><input id="q" type="search" inputmode="search" placeholder="Rechercher un titre, un mot, un numéro…" autocomplete="off" aria-label="Recherche"><button class="x" data-act="clear" hidden aria-label="Effacer">✕</button></div>
+    <div class="search"><input id="q" type="search" inputmode="search" placeholder="Titre, mot ou numéro…" autocomplete="off" aria-label="Recherche"><button class="x" data-act="clear" hidden aria-label="Effacer">✕</button></div>
     <div id="results"></div>
     <div id="home">
+      ${installCard()}
       ${lastS ? `<button class="resume" data-go="${lastS.n}"><small>Reprendre la lecture</small><b>${pad(lastS.n)} · ${esc(lastS.t)}</b></button>` : ''}
-      <form class="goto" id="goto"><input id="gn" type="number" min="1" max="884" inputmode="numeric" placeholder="Aller au cantique n°" aria-label="Numéro"><button class="btn">Ouvrir</button></form>
+      <form class="goto" id="goto"><input id="gn" type="number" min="1" max="${MAX}" inputmode="numeric" placeholder="Aller au cantique n°" aria-label="Numéro"><button class="btn">Ouvrir</button></form>
       <h2 class="sec">Parcourir le recueil</h2>
       <div class="ranges">${ranges.join('')}</div>
       <h2 class="sec">Au hasard</h2>
@@ -133,7 +155,7 @@ function viewHome() {
 }
 
 function viewSerie(a) {
-  a = +a; const b = Math.min(a + 99, 884);
+  a = +a; const b = Math.min(a + 99, MAX);
   document.body.classList.remove('reading');
   header(`${pad(a)} – ${b}`, { back: true }); setTabs('#/');
   let h = '<div class="grid">';
@@ -236,6 +258,8 @@ document.addEventListener('click', e => {
     case 'random': location.hash = '#/c/' + NUMS[Math.random() * NUMS.length | 0]; break;
     case 'clear': { const q = $('#q'); q.value = ''; q.dispatchEvent(new Event('input')); q.focus(); } break;
     case 'prefs': openPrefs(); break;
+    case 'install': if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then(() => { deferredPrompt = null; refreshInstall(); }); } break;
+    case 'hideinstall': store.set('hideInstall', true); { const i = document.getElementById('install'); if (i) i.remove(); } break;
   }
 });
 async function share(n) {
@@ -243,7 +267,7 @@ async function share(n) {
   let v = 0;
   const text = `${pad(s.n)} — ${s.t}\n\n` + s.s.map(([t, l]) => (t === 'r' ? 'Refrain :\n' : `${++v}.\n`) + l.join('\n')).join('\n\n') + '\n\n— Louanges à Dieu';
   try { if (navigator.share) { await navigator.share({ title: s.t, text }); return; } } catch (e) { if (e.name === 'AbortError') return; }
-  try { await navigator.clipboard.writeText(text); toast('Cantique copié'); } catch { toast('Partage indisponible'); }
+  try { await navigator.clipboard.writeText(text); toast('Cantique copié'); } catch (e) { toast('Partage indisponible'); }
 }
 
 // ---------- réglages ----------
@@ -273,7 +297,7 @@ async function keepAwake() {
   try {
     if (prefs.wake && 'wakeLock' in navigator && document.body.classList.contains('reading')) lock = await navigator.wakeLock.request('screen');
     else if (lock) { await lock.release(); lock = null; }
-  } catch {}
+  } catch (e) {}
 }
 document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && keepAwake());
 
@@ -306,10 +330,15 @@ loadData().then(d => {
   SONGS = d.cantiques; CATS = d.categories;
   BY = new Map(SONGS.map(s => [s.n, s]));
   NUMS = SONGS.map(s => s.n);
+  MAX = NUMS[NUMS.length - 1];
   for (const s of SONGS) { s.nt = norm(s.t); s.nb = norm(s.s.map(b => b[1].join(' ')).join(' ')); }
   route();
 }).catch(() => { view.innerHTML = '<div class="empty">Impossible de charger les cantiques.</div>'; });
-if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-  addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
+  // Quand une nouvelle version du recueil est installée, on recharge la page une seule fois.
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !reloaded) { reloaded = true; location.reload(); } });
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js').then(r => r.update && r.update()).catch(() => {}));
 }
 })();

@@ -1,6 +1,6 @@
 # Louanges à Dieu — Recueil de cantiques
 
-Application web (PWA) : 883 cantiques lisibles hors ligne, comme un livre électronique.
+Application web (PWA) : 934 cantiques lisibles hors ligne, comme un livre électronique.
 HTML + CSS + JavaScript, sans serveur ni SQL : toutes les données sont dans `cantiques.json`.
 
 ## Fonctions
@@ -20,3 +20,12 @@ Aucune compilation : copiez ces fichiers tels quels sur n'importe quel hébergem
 Double-cliquer sur `index.html` fonctionne (les données sont lues dans `cantiques.local.js`, copie de `cantiques.json`
 utilisée uniquement hors serveur). Si vous modifiez `cantiques.json`, recopiez son contenu dans `cantiques.local.js`
 sous la forme `window.__CANTIQUES=<contenu>;`. L'installation PWA et le hors-ligne nécessitent HTTPS.
+
+## Mettre à jour le recueil
+1. Modifier `cantiques.json` (et recopier son contenu dans `cantiques.local.js`).
+2. Changer `VERSION` en haut de `sw.js` : les téléphones recevront la nouvelle version au prochain lancement.
+
+## Installation sur les téléphones
+- **Android / Chrome, Edge, Samsung Internet** : bouton « Installer » dans l'application, ou menu ⋮ → « Installer l'application ».
+- **iPhone / iPad** : uniquement depuis **Safari** → Partager → « Sur l'écran d'accueil » (Chrome et les navigateurs intégrés à WhatsApp, Facebook, etc. ne savent pas installer sur iOS).
+- Le site doit être servi en **HTTPS**.

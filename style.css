@@ -66,7 +66,7 @@ h2.sec{font:600 .8rem var(--sans);letter-spacing:.08em;text-transform:uppercase;
 .st{margin:0 0 1.1em;display:grid;grid-template-columns:1.6em 1fr;column-gap:.4em}
 .st .lb{font:700 .72em var(--sans);color:var(--accent);padding-top:.45em;text-align:right}
 .st p{margin:0}
-.st.r{display:block;font-style:italic;border-left:3px solid var(--accent);margin-left:.3em;padding:.1em 0 .1em .6em;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 8%,transparent),transparent)}
+.st.r{display:block;font-style:italic;border-left:3px solid var(--accent);margin-left:.3em;padding:.1em 0 .1em .6em;background:linear-gradient(90deg,rgba(122,31,43,.08),transparent)}
 .st.r .lb{display:block;font-style:normal;text-align:left;padding:0 0 .2em;text-transform:uppercase;letter-spacing:.08em;font-size:.6em}
 .pager{display:flex;align-items:center;gap:10px;margin:28px 0 8px}
 .pager button{flex:1;padding:13px;border-radius:12px;background:var(--chip);font-weight:600}
@@ -92,3 +92,9 @@ body.big .st.r{border-left:0;padding-left:0;margin-left:0;background:none}
 #toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:#222;color:#fff;padding:10px 16px;border-radius:999px;opacity:0;transition:.25s;pointer-events:none;z-index:30;font-size:.9rem}
 #toast.show{opacity:1;transform:translate(-50%,0)}
 @media print{#top,#tabs,.pager{display:none}#app{box-shadow:none}}
+
+.install{display:flex;align-items:center;gap:10px;background:var(--chip);border-left:4px solid var(--accent);border-radius:14px;padding:12px 8px 12px 14px;margin-bottom:14px;font-size:.88rem;line-height:1.4}
+.install>div{flex:1}
+.install .x2{color:var(--muted);width:32px;height:32px;flex:none}
+.install .btn{flex:none;padding:8px 14px}
+@media (display-mode: standalone){.install{display:none}}
