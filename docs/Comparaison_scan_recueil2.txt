@@ -1,0 +1,397 @@
+COMPARAISON AVEC LE SCAN — PAGES 1 À 22 (cantiques 1 à 163)
+
+Méthode : j’ai relu les pages 1 à 22 du scan et comparé chaque cantique, mot à mot, avec le texte du document Word.
+Les accents et la ponctuation sont ignorés. Seuls les cantiques qui diffèrent de plus de 7 % sont listés.
+« scan » = ce qui est lu sur l’image ; « document » = ce qui figure dans le Word. Les passages marqués ci-dessous
+sont signalés « à vérifier » dans l’application. Un écart n’est pas toujours une erreur du document : certaines lignes du scan
+sont très abîmées. Aucune parole n’a été modifiée sur la base de cette comparaison.
+
+CORRECTIONS DE NUMÉROS APPLIQUÉES (vérifiées sur le scan, en zoomant sur les numéros imprimés) :
+  - « Roi couvert de blessures » est le n° 101 (le Word le numérotait 100) ;
+  - « Torrents d’amour et de grâce » est le n° 102 (le Word : 101) ;
+  - « Où trouver une retraite » est le n° 103 (le Word : 102) ;
+  - « Louons le Seigneur… » (n° 126 dans le Word) est la fin du cantique 125 (page 15, colonne de droite) : il a été rattaché au 125.
+
+BILAN : 139 cantiques comparés, 55 présentent des écarts.
+
+n° 5 — Mon amour pour Jésus grandit  (concordance 74 %)
+     · scan « x2 » / document « 2x Oh »
+     · scan « tous les jours » / document « toujours »
+     · scan « — » / document « Oh »
+     · scan « oui oui » / document « oh »
+
+n° 6 — Où dit-on que Je viens ?  (concordance 92 %)
+     · scan « Qui » / document « D’où »
+     · scan « En » / document « — »
+     · scan « plénitude » / document « lumière »
+     · scan « En » / document « — »
+
+n° 7 — Jésus t’invite : viens au festin  (concordance 93 %)
+     · scan « Qu’Il donne » / document « Qui est donnée »
+
+n° 11 — Il y a une rivière
+     · Ce numéro est lisible sur le scan, mais le document n’a pas de texte pour lui.
+
+n° 14 — Je marche avec Jésus  (concordance 89 %)
+     · scan « forte » / document « — »
+     · scan « Et » / document « Il est »
+     · scan « Il m’aide » / document « à mes côtés »
+
+n° 15 — Père céleste  (concordance 86 %)
+     · scan « 2x » / document « Père céleste comme je T’apprécie »
+     · scan « 2x » / document « Saint Esprit Toi ma consolation »
+
+n° 24 — Nous aurons un nouveau nom  (concordance 92 %)
+     · scan « — » / document « Un »
+     · scan « Beau nom » / document « Un »
+
+n° 25 — Reste fidèle  (concordance 87 %)
+     · scan « Jésus » / document « — »
+     · scan « Jésus » / document « — »
+     · scan « Oui » / document « Et »
+     · scan « Oui » / document « Et »
+
+n° 26 — Le bonheur et la grâce m’accompagneront  (concordance 86 %)
+     · scan « la » / document « ma »
+     · passage différent : scan « J’habiterai dans la maison du Père Le bonheur et la grâ… » / document « … »
+
+n° 28 — Merveilleux Jésus  (concordance 88 %)
+     · scan « Qu’adorent » / document « Obéissent »
+     · scan « Suprême » / document « Splendeur »
+
+n° 30 — Le feu de Ton Esprit  (concordance 64 %)
+     · scan « Le feu de Ton Esprit Ce qui me donne la Vie C’est » / document « — »
+     · scan « de Ton Esprit Ce » / document « — »
+     · scan « me » / document « — »
+     · scan « C’est » / document « — »
+     · scan « — » / document « qui donne la vie Le feu »
+
+n° 34 — Oh, merveilleuse délivrance !  (concordance 91 %)
+     · scan « loue » / document « suis »
+     · scan « clémence » / document « démence »
+     · scan « Libre » / document « Libéré »
+     · scan « liens » / document « fardeaux »
+     · scan « De sainte lumière » / document « Du saint lien même »
+
+n° 51 — Car Dieu m’a tant aimé  (concordance 86 %)
+     · scan « mon cœur quelle joie » / document « m’en conduire à la gloire »
+
+n° 52 — Celui qui boira de l’eau  (concordance 87 %)
+     · scan « ce que Je donnerai » / document « cette eau »
+     · scan « — » / document « En lui »
+
+n° 54 — C’est le Roi des rois  (concordance 90 %)
+     · scan « Vie » / document « Voie »
+     · scan « Et je sais que je suis sien » / document « — »
+     · scan « Sauveur » / document « salut »
+
+n° 58 — Venez, chantez tous  (concordance 62 %)
+     · scan « Toi » / document « Tous ceux »
+     · scan « sommeilles » / document « sont »
+     · scan « Cherche » / document « Cherchent »
+     · passage différent : scan « Proclamez le au monde entier Dieu nous aime Du ciel Jés… » / document « … »
+
+n° 60 — Le Roi des rois  (concordance 93 %)
+     · scan « Mis » / document « Il est »
+     · scan « Reviendra » / document « Triomphant »
+     · scan « chercher » / document « vainqueur »
+     · scan « prendre pour les » / document « avons droit aux »
+
+n° 61 — Le Nom de mon Sauveur et Maître  (concordance 90 %)
+     · scan « M’est » / document « Est »
+     · scan « Il remplit » / document « Rempli »
+     · scan « si » / document « — »
+     · scan « cruel » / document « — »
+     · scan « Guérit peines et maladies » / document « Guéris guéris mes blessures »
+     · scan « Te » / document « — »
+     · scan « — » / document « à Toi »
+
+n° 65 — Je Le rencontrerai  (concordance 91 %)
+     · scan « et comprend » / document « de comment »
+     · scan « reconnaîtras » / document « rencontreras »
+     · scan « sera » / document « — »
+     · scan « passerai » / document « passe »
+     · scan « marée » / document « mer »
+     · scan « verrai le matin » / document « vois la matinée »
+     · scan « reconnaîtrai » / document « rencontrerai »
+     · scan « tressaille » / document « tressaillit »
+     · scan « là » / document « — »
+     · scan « réjouirai » / document « mêlerai »
+
+n° 67 — Là, Il me conduit  (concordance 92 %)
+     · scan « qui appelle » / document « appeler »
+     · scan « ta » / document « la »
+     · scan « Là où » / document « Oui »
+
+n° 68 — Dans ma vie  (concordance 46 %)
+     · passage différent : scan « De ma bouche 2x Je veux prêcher Jésus De ma bouche 2x D… » / document « … »
+
+n° 69 — Le feu divin  (concordance 89 %)
+     · scan « de tout » / document « déborde »
+     · scan « ferveur » / document « ardeur »
+     · scan « — » / document « 4x C’est merveilleux ce que je vois »
+     · scan « Reçois Le » / document « réjouis toi »
+
+n° 74 — Pour finir la vie juste  (concordance 89 %)
+     · scan « Enfin » / document « Et »
+     · scan « d’Élie le prophète » / document « de l’Éternel prophétique »
+     · scan « d’Élie le prophète » / document « de Dieu prophétique »
+     · scan « prendra » / document « prend »
+
+n° 77 — La promesse de Dieu est vraie  (concordance 93 %)
+     · scan « Cette » / document « La »
+     · scan « cru » / document « crue »
+
+n° 84 — Tous mes péchés  (concordance 89 %)
+     · scan « Tous » / document « Toutes »
+     · scan « soucis » / document « souillures »
+     · scan « pris Tous » / document « prises Toutes »
+     · scan « soucis Tous mes soucis » / document « souillures »
+     · scan « pris » / document « prises »
+     · scan « Viens » / document « Il vient »
+     · scan « Viens » / document « Il vient »
+
+n° 85 — Nous partirons  (concordance 91 %)
+     · scan « mûriers » / document « monts »
+     · scan « que nous » / document « qu’nous »
+     · scan « fleuves coulent » / document « nuées s’écoulent »
+
+n° 87 — Sois fidèle dans les petites choses  (concordance 79 %)
+     · scan « Alléluia 3x Alléluia 3x » / document « — »
+     · passage différent : scan « 3x… » / document « Jésus revient et toi seras tu prêt Jésus revient et toi… »
+
+n° 89 — Je suis heureux, voilà la raison  (concordance 84 %)
+     · scan « et » / document « — »
+     · scan « Et » / document « En »
+     · scan « accablé » / document « rempli »
+     · scan « pesant fardeau » / document « puissant désir »
+     · scan « a le vrai repos » / document « — »
+     · scan « — » / document « par l’adversité En »
+
+n° 91 — Le Maître est là qui t’appelle  (concordance 66 %)
+     · scan « Lève toi donc ô pécheur Réponds » / document « Il donne »
+     · scan « — » / document « chacun Saisis »
+     · scan « C’est ton Dieu » / document « Viens donc »
+     · scan « Ah » / document « — »
+     · scan « Depuis » / document « As tu »
+     · scan « déjà » / document « péché »
+     · scan « refuses de L’entendre Ne tarde plus Il est » / document « peux dès maintenant Trouver »
+     · scan « Il est là t’offrant Sa » / document « — »
+     · scan « Son » / document « Le »
+     · scan « Sa paix qui » / document « Son amour »
+     · scan « félicité Sa main » / document « fidélité Son cœur »
+     · scan « tendue » / document « fondu »
+     · … et 2 autres écarts
+
+n° 92 — Jésus, le bon Compagnon  (concordance 59 %)
+     · scan « Tout » / document « Je suis »
+     · scan « Montrez » / document « Laissez »
+     · scan « Un homme patient » / document « La honte patiente »
+     · scan « Tout » / document « Je suis »
+     · scan « Ne trouvant » / document « Et n’ai »
+     · scan « Oh Je vous prie montrez » / document « Si tu veux prier montre »
+     · scan « Donnez » / document « Laissez »
+     · scan « Si comme » / document « Je t’en prie Laissez »
+     · scan « Vous cherchez » / document « chercher »
+     · scan « Où » / document « Je »
+     · scan « pouvez » / document « prie »
+     · scan « Car moi » / document « Au milieu »
+     · … et 12 autres écarts
+
+n° 94 — Psaume 122:1  (concordance 92 %)
+     · scan « m’avait » / document « m’a »
+
+n° 95 — Jésus m’a franchi entièrement  (concordance 89 %)
+     · scan « m’affranchit » / document « m’a franchi »
+     · scan « je loue toujours » / document « le bon Berger »
+
+n° 99 — Jésus sort de la tombe  (concordance 90 %)
+     · scan « Où » / document « Qu’en »
+     · scan « Pourrais je » / document « Pourquoi se »
+     · scan « Pour qui croit » / document « Pourquoi crois tu »
+     · scan « je meure » / document « ô demeure »
+     · scan « revivre » / document « m’y vivre »
+
+n° 101 — Roi couvert de blessures  (concordance 59 %)
+     · scan « expie » / document « coula »
+     · scan « meurs » / document « mourus »
+     · scan « ces » / document « — »
+     · scan « m’abats » / document « n’abats »
+     · passage différent : scan « Tourne vers moi Ta face Fidèle et bon Sauveur Oh quel t… » / document « … »
+
+n° 103 — Où trouver une retraite  (concordance 69 %)
+     · scan « soufferte » / document « souffert »
+     · scan « cité » / document « clé »
+     · scan « fuyant » / document « tremblant »
+     · scan « qu’a » / document « qui a »
+     · scan « le glaive » / document « la gloire »
+     · scan « T’affrontera » / document « t’attendra »
+     · scan « sondera » / document « sonder »
+     · passage différent : scan « Mais mes fautes plus nombreuses Que le sable au bord de… » / document « … »
+
+n° 105 — Connais-tu cette cité ?  (concordance 51 %)
+     · scan « Pèlerins et » / document « Fini les »
+     · scan « Ici bas dans les » / document « Plus de »
+     · scan « Sublime » / document « Sainte »
+     · scan « Et son éclat » / document « Bien état »
+     · scan « Illumine et » / document « L’arbre qui »
+     · passage différent : scan « D’or de perles et d’azur Est notre patrie Connais tu le… » / document « … »
+
+n° 107 — Ô jour heureux  (concordance 90 %)
+     · scan « jour » / document « heureux »
+     · scan « ineffable » / document « inlassable »
+     · scan « saint » / document « salut »
+     · scan « Il » / document « — »
+     · scan « donne » / document « dedans »
+     · scan « craindrai je ô mort » / document « condamner »
+     · scan « disent » / document « Dans »
+     · scan « C’en est fait » / document « C’est en Jésus »
+     · scan « coule » / document « coula »
+
+n° 108 — Au Nom de Jésus  (concordance 55 %)
+     · scan « Dites » / document « Dis »
+     · passage différent : scan « Tuimbe wote na furaha Mwamba ni Yesu Mwamba Mwamba ni Y… » / document « … »
+
+n° 109 — Jéricho  (concordance 67 %)
+     · scan « — » / document « de »
+     · scan « crouler » / document « circuler »
+     · scan « milices » / document « fils »
+     · passage différent : scan « Tout le peuple obéissant Au son du clairon puissant Ave… » / document « … »
+
+n° 111 — Seigneur ! Du sein de la poussière  (concordance 89 %)
+     · scan « et trop se » / document « Il faut »
+     · scan « long et vague espoir » / document « moi le feu sacré »
+     · scan « Luire mais » / document « Loin »
+     · scan « Ton » / document « moi tout »
+     · scan « âme animer » / document « amour anime »
+     · scan « par » / document « pour »
+
+n° 112 — Tu es Seigneur  (concordance 71 %)
+     · scan « Il est » / document « Tu es »
+     · scan « Il est » / document « Tu es »
+     · scan « Il est » / document « — »
+     · scan « Il est » / document « Tu es »
+
+n° 113 — J’ai quelque chose  (concordance 78 %)
+     · scan « Et » / document « — »
+     · scan « le » / document « la »
+     · scan « cette chose » / document « cela »
+     · scan « Ce que » / document « — »
+     · scan « vaut » / document « fait »
+     · scan « peine d’en parler Cela me » / document « paix la paix dans mon cœur J’ai »
+     · scan « Et » / document « — »
+     · scan « le » / document « la »
+
+n° 114 — Redis-moi l’histoire  (concordance 88 %)
+     · scan « Redites » / document « Redis »
+     · scan « Parlez » / document « Fais »
+     · scan « Qu’à » / document « Que »
+     · scan « on me » / document « en moi »
+     · scan « Redites » / document « Redis »
+     · scan « Redites » / document « Redis »
+     · scan « Redites » / document « Redis »
+     · scan « Éveillez » / document « Éveille »
+     · scan « Redites » / document « Redis »
+     · scan « redites » / document « redis »
+     · scan « Redites » / document « Redis »
+     · scan « trompeur Me » / document « m’entraîne Et »
+     · … et 2 autres écarts
+
+n° 115 — Entre Tes mains, j’abandonne  (concordance 30 %)
+     · scan « d’en » / document « de »
+     · scan « rien » / document « Ton bien »
+     · scan « Entre » / document « À »
+     · scan « Tout » / document « — »
+     · passage différent : scan « Je n’ai pas peur de Te suivre Sur le chemin de la croix… » / document « … »
+
+n° 116 — À Tes pieds, ô divin Maître  (concordance 76 %)
+     · scan « J’ai soif de » / document « Je sais où »
+     · scan « n’ai » / document « sais »
+     · scan « J’ai soif de » / document « Je sais où »
+     · scan « n’ai » / document « sais »
+     · scan « Faites » / document « Fais toi »
+     · scan « ô » / document « à »
+     · scan « Pensers vains » / document « Pensées vaines »
+     · scan « Tous les bruits faites silence » / document « — »
+     · passage différent : scan « Recueillie en Ta présence Mon âme n’entend que Toi Tous… » / document « Recueille… »
+     · scan « le trésor » / document « l’erreur »
+     · scan « encor » / document « encore »
+     · passage différent : scan « c’est la vie C’est la lumière et la paix À Ton école bé… » / document « est… »
+     · … et 1 autres écarts
+
+n° 117 — Si le même Esprit  (concordance 76 %)
+     · scan « ressuscitera » / document « ressuscita »
+     · scan « Vie » / document « — »
+     · scan « Si cet Esprit » / document « Vie s’il »
+     · passage différent : scan « Vie Il donnera à votre corps mortel Si cet Esprit demeu… » / document « … »
+
+n° 129 — Tentés, éprouvés  (concordance 92 %)
+     · scan « Quoi que dans » / document « Dont »
+     · scan « mal sont impunis » / document « cœur est si souvent inquiet »
+     · scan « et patiente » / document « au matin »
+     · scan « Lorsqu’Il » / document « Lorsque »
+     · scan « ce » / document « ces »
+     · scan « — » / document « bénis »
+
+n° 131 — Douce heure de la prière  (concordance 83 %)
+     · scan « de soucis » / document « du souci »
+     · scan « Fait » / document « Fais »
+     · scan « au tentateur » / document « à la tentation »
+     · scan « l’endroit Où » / document « l’adoration Ô »
+     · scan « joyeux je m’arrête là Et j’attends » / document « écoute le merveilleux En attendant »
+     · scan « détresse » / document « dévotion »
+     · scan « j’ai tant » / document « là j’en »
+     · scan « je me confie en » / document « la main tendue à »
+     · scan « je déposerai » / document « déposés »
+     · scan « t’attends » / document « attendons »
+
+n° 138 — Ne refuse pas, accepte  (concordance 77 %)
+     · scan « Une autre fois peut être » / document « Ne tarde plus pour n’être »
+
+n° 142 — Mon cœur est plein de joie  (concordance 63 %)
+     · scan « dit et je le crois » / document « Roi de la gloire »
+     · passage différent : scan « Tous les liens du passé Ont été déliés Plus rien ne me … » / document « … »
+
+n° 143 — Rassemblés comme les frères  (concordance 90 %)
+     · scan « Qu’on » / document « Qui »
+     · scan « enterré je porte du fruit » / document « offert le pain de vie »
+     · scan « de ce pain » / document « — »
+
+n° 146 — Quel bonheur de marcher avec Lui  (concordance 83 %)
+     · scan « conduira » / document « conduit »
+     · scan « me guérit » / document « m’a guéri »
+     · scan « Il guérit parfaitement Me libère » / document « Le Guérisseur puissant Ma fièvre »
+     · scan « me guérit » / document « m’a guéri »
+     · passage différent : scan « Alléluia Gloire à Son saint Nom 2x Bientôt Jésus revien… » / document « … »
+
+n° 147 — Près du trône de la grâce  (concordance 83 %)
+     · scan « Faites » / document « Fais »
+     · scan « vain » / document « vaine »
+     · scan « frivolités » / document « infidèles »
+     · scan « toi » / document « le »
+     · scan « opprime » / document « opprimons »
+     · scan « vain » / document « vaine »
+     · scan « Et » / document « Être »
+     · scan « J’accepterai » / document « Accepter »
+     · passage différent : scan « Quand devant moi s’ouvriront les portes d’or Et qu’enfi… » / document « … »
+
+n° 156 — Amène-les  (concordance 89 %)
+     · scan « sec » / document « brûlé »
+     · scan « la » / document « les »
+     · scan « perdue Qui s’est éloignée » / document « perdues Et s’éloignant »
+     · scan « vie » / document « voie »
+     · scan « dit Va » / document « dire Vas »
+
+n° 157 — J’irai partout avec ma croix  (concordance 77 %)
+     · scan « — » / document « la »
+     · scan « — » / document « la »
+     · scan « la misère » / document « l’abondance »
+     · scan « l’abondance » / document « la pauvreté »
+     · scan « — » / document « la »
+     · passage différent : scan « Même dans la maladie Même dans la bonne santé Ah Oui je… » / document « … »
+
+n° 161 — Océan de Dieu, si immense  (concordance 84 %)
+     · scan « Être » / document « — »
+     · scan « 2x Afin que tout mon être » / document « — »
+     · scan « Souvent » / document « Souviens toi »
+     · passage différent : scan « Dès lors Alléluia Le reste de mon temps Est au Seigneur… » / document « … »

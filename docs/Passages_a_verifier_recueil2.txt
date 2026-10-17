@@ -3,18 +3,19 @@ RECUEIL CANTIQUES — PASSAGES ET POINTS À VÉRIFIER
 Fichier généré automatiquement à partir du document « Recueil_cantiques_reprise_manuelle_pages_59_70.docx ».
 
 1. BILAN
-  - Cantiques repris dans l’application : 579 (numéros de 1 à 662)
+  - Cantiques repris dans l’application : 578 (numéros de 1 à 662)
   - Cantiques signalés « à vérifier » dans le document source : 82
   - Cantiques sans aucune parole dans le document source (non repris) : 11, 288, 289, 290, 291, 292, 293, 294, 295, 320, 324, 660
-  - Numéros absents du recueil (pas de texte dans le document source) : 83 numéros
+  - Numéros absents du recueil (pas de texte dans le document source) : 84 numéros
 
 2. NUMÉROTATION
   Dans le document Word, les 28 premiers titres étaient décalés d’un rang par rapport aux numéros imprimés
   du livre (« Jésus-Christ, ouvre-nous la porte » n’avait pas de numéro). Ils ont été remis sur les numéros du scan :
-  1 à 27 du Word -> 2 à 28 ; 28 du Word -> 30 ; le premier titre -> 1. À partir du 31, les numéros sont ceux du Word.
+  1 à 27 du Word -> 2 à 28 ; 28 du Word -> 30 ; le premier titre -> 1. À partir du 31, les numéros sont ceux du Word,
+  sauf 100, 101, 102 du Word, devenus 101, 102, 103 (vérifié sur le scan), et 126 rattaché au 125.
 
 3. NUMÉROS ABSENTS
-  11, 29, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 64, 103, 152, 164, 165, 166, 167, 168, 169, 215, 221, 246, 257, 259, 267, 273, 275, 288, 289, 290, 291, 292, 293, 294, 295, 301, 310, 312, 318, 319, 320, 324, 325, 337, 338, 341, 367, 396, 415, 449, 453, 466, 472, 476, 482, 489, 501, 526, 562, 587, 594, 596, 597, 606, 608, 610, 611, 612, 613, 618, 622, 623, 625, 626, 627, 629, 660
+  11, 29, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 64, 100, 126, 152, 164, 165, 166, 167, 168, 169, 215, 221, 246, 257, 259, 267, 273, 275, 288, 289, 290, 291, 292, 293, 294, 295, 301, 310, 312, 318, 319, 320, 324, 325, 337, 338, 341, 367, 396, 415, 449, 453, 466, 472, 476, 482, 489, 501, 526, 562, 587, 594, 596, 597, 606, 608, 610, 611, 612, 613, 618, 622, 623, 625, 626, 627, 629, 660
 
 4. NOTES DE CONTRÔLE DU DOCUMENT SOURCE
   - Page 62 : le numéro 562 n’est pas lisible dans le scan entre les cantiques 561 et 563 ; aucun texte ne lui a été attribué.

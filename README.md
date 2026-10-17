@@ -45,3 +45,4 @@ Pour l'ajouter à partir d'un scan :
 `recueil2.json` a été produit à partir du document `Recueil_cantiques_reprise_manuelle_pages_59_70.docx`
 (579 cantiques, numéros 1 à 662). Les cantiques dont le texte est incertain affichent un avertissement ;
 la liste complète est dans `docs/Passages_a_verifier_recueil2.txt`.
+La comparaison avec le scan (pages 1 à 22) est dans `docs/Comparaison_scan_recueil2.txt`.
