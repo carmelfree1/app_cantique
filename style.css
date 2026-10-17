@@ -100,7 +100,7 @@ body.big .st.r{border-left:0;padding-left:0;margin-left:0;background:none}
 @media (display-mode: standalone){.install{display:none}}
 
 body[data-book="2"]{--accent:#1f5a7a}
-[data-theme="dark"] body[data-book="2"],body[data-book="2"]{--accent:#1f5a7a}
+[data-theme="dark"] body[data-book="2"]{--accent:#6fb1d4}
 .books{display:flex;gap:8px;margin-bottom:14px}
 .books a{flex:1;display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:14px;text-decoration:none;color:var(--ink);background:var(--chip);border:2px solid transparent}
 .books a b{font:600 .92rem var(--serif)}
