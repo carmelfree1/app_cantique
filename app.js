@@ -19,7 +19,8 @@ function loadBook(b) {
   return get.then(d => {
     const songs = d.cantiques || [];
     if (!songs.length) throw new Error('vide');
-    for (const s of songs) { s.nt = norm(s.t); s.nb = norm(s.s.map(x => x[1].join(' ')).join(' ')); s.na = s.a ? norm(s.a) : ''; }
+    const defAuthor = d.auteur_defaut || '';
+    for (const s of songs) { if (!s.a && defAuthor) s.a = defAuthor; s.nt = norm(s.t); s.nb = norm(s.s.map(x => x[1].join(' ')).join(' ')); s.na = s.a ? norm(s.a) : ''; }
     const nums = songs.map(s => s.n);
     return (DATA[b.id] = { songs, cats: d.categories || [], by: new Map(songs.map(s => [s.n, s])), nums, max: nums[nums.length - 1] });
   }).catch(() => (DATA[b.id] = null));
