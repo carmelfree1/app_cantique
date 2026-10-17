@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Affiche — Installer l’application Cantiques</title>
+<style>
+  :root{color-scheme:light}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;color:#2a211b;background:#fff}
+  .page{max-width:720px;margin:0 auto;padding:32px 24px;text-align:center}
+  h1{color:#7a1f2b;font-size:2.2rem;margin:0 0 4px}
+  .sub{color:#7b6d60;margin:0 0 20px;font-size:1.1rem}
+  .qr{width:min(70vw,340px);height:auto;margin:10px auto;display:block;border:10px solid #fff;outline:3px solid #7a1f2b;border-radius:6px}
+  .url{font:600 1.15rem system-ui,sans-serif;margin:10px 0 24px;word-break:break-all}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left}
+  .box{background:#f6f0e4;border-radius:12px;padding:12px 16px}
+  .box h2{margin:0 0 6px;font-size:1.1rem;color:#7a1f2b}
+  .box ol{margin:0;padding-left:1.2em;font:.95rem/1.5 system-ui,sans-serif}
+  .warn{margin-top:18px;background:#fff3d6;border-left:5px solid #c98a00;padding:10px 14px;text-align:left;font:.95rem/1.5 system-ui,sans-serif}
+  button{margin:20px 6px 0;padding:10px 18px;border:0;border-radius:10px;background:#7a1f2b;color:#fff;font:600 1rem system-ui,sans-serif;cursor:pointer}
+  @media(max-width:560px){.cols{grid-template-columns:1fr}}
+  @media print{button{display:none}.page{padding:8mm}}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Recueil de cantiques</h1>
+  <p class="sub">À lire sur votre téléphone, même sans connexion</p>
+  <img class="qr" src="icons/qr-appcantique.svg" alt="Code QR vers l’application">
+  <div class="url">appcantique.vercel.app</div>
+  <div class="cols">
+    <div class="box"><h2>Sur Android</h2><ol>
+      <li>Scannez le code avec l’appareil photo.</li>
+      <li>Ouvrez le lien dans <b>Chrome</b>.</li>
+      <li>Touchez <b>Installer</b> (ou menu ⋮ → « Installer l’application »).</li></ol></div>
+    <div class="box"><h2>Sur iPhone</h2><ol>
+      <li>Scannez le code avec l’appareil photo.</li>
+      <li>Ouvrez le lien dans <b>Safari</b>.</li>
+      <li>Touchez <b>Partager</b> puis <b>« Sur l’écran d’accueil »</b>.</li></ol></div>
+  </div>
+  <div class="warn"><b>Important :</b> si le lien s’ouvre dans WhatsApp, Facebook ou une autre application, l’installation est impossible. Touchez « ⋮ » (ou le bouton de partage) puis « Ouvrir dans le navigateur ». L’application fonctionne aussi sans être installée.</div>
+  <button onclick="window.print()">Imprimer l’affiche</button>
+</div>
+</body>
+</html>

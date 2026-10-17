@@ -46,3 +46,9 @@ Pour l'ajouter à partir d'un scan :
 (579 cantiques, numéros 1 à 662). Les cantiques dont le texte est incertain affichent un avertissement ;
 la liste complète est dans `docs/Passages_a_verifier_recueil2.txt`.
 La comparaison avec le scan (pages 1 à 22) est dans `docs/Comparaison_scan_recueil2.txt`.
+
+## Installation : ce qui est prévu pour les téléphones
+- L'application marche aussi **sans installation**, dans n'importe quel navigateur, et fonctionne hors ligne dès la première visite.
+- Guide pas à pas par téléphone : `#/installer` (aussi accessible depuis l'accueil et les réglages).
+- Dans le navigateur intégré de WhatsApp/Facebook (Android) : bouton « Ouvrir dans Chrome » ; sur iPhone : bouton « Copier le lien » à coller dans Safari.
+- `affiche.html` : affiche imprimable avec code QR vers le site (à scanner avec l'appareil photo, ce qui ouvre le vrai navigateur).

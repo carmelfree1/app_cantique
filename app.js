@@ -88,15 +88,18 @@ const isSafariIOS = isIOS && /safari/i.test(UA) && !/crios|fxios|edgios|opios|gs
 const inAppBrowser = /FBAN|FBAV|FB_IAB|Instagram|Line\/|MicroMessenger|Snapchat|TikTok|Twitter|; wv\)|Telegram|GSA\//i.test(UA) || (isIOS && !/safari/i.test(UA));
 window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; refreshInstall(); });
 window.addEventListener('appinstalled', () => { deferredPrompt = null; toast('Application installée ✓'); refreshInstall(); });
+const isAndroid = /android/i.test(UA);
+function chromeIntent() { return 'intent://' + location.host + location.pathname + '#Intent;scheme=' + location.protocol.replace(':', '') + ';package=com.android.chrome;end'; }
 function installCard() {
   if (isStandalone() || store.get('hideInstall', false)) return '';
   let msg, btn = '';
   if (deferredPrompt) { msg = 'Installez l’application pour la lire hors ligne, comme un livre.'; btn = '<button class="btn" data-act="install">Installer</button>'; }
-  else if (inAppBrowser) msg = 'Pour installer l’application, ouvrez ce lien dans <b>Chrome</b> ou <b>Safari</b> (menu ⋮ ou ⎋ → « Ouvrir dans le navigateur »).';
+  else if (inAppBrowser && isAndroid) { msg = 'Vous êtes dans le navigateur d’une autre application : l’installation y est impossible. Ouvrez le site dans <b>Chrome</b>.'; btn = '<button class="btn" data-act="openchrome">Ouvrir dans Chrome</button>'; }
+  else if (inAppBrowser) { msg = 'Vous êtes dans le navigateur d’une autre application : l’installation y est impossible. Copiez le lien et collez-le dans <b>Safari</b>.'; btn = '<button class="btn" data-act="copylink">Copier le lien</button>'; }
   else if (isSafariIOS) msg = 'Pour installer sur iPhone / iPad : touchez <b>Partager</b> (le carré avec la flèche) puis <b>« Sur l’écran d’accueil »</b>.';
-  else if (isIOS) msg = 'Sur iPhone / iPad, ouvrez ce site dans <b>Safari</b> pour pouvoir l’installer.';
+  else if (isIOS) { msg = 'Sur iPhone / iPad, l’installation se fait depuis <b>Safari</b>. Copiez le lien et collez-le dans Safari.'; btn = '<button class="btn" data-act="copylink">Copier le lien</button>'; }
   else msg = 'Pour installer : menu du navigateur (⋮) → <b>« Installer l’application »</b> ou <b>« Ajouter à l’écran d’accueil »</b>.';
-  return `<div class="install" id="install"><div>${msg}</div>${btn}<button class="x2" data-act="hideinstall" aria-label="Masquer">✕</button></div>`;
+  return `<div class="install" id="install"><div>${msg}<br><a class="lnk" href="#/installer">Voir le guide pas à pas</a></div>${btn}<button class="x2" data-act="hideinstall" aria-label="Masquer">✕</button></div>`;
 }
 function refreshInstall() { const el = document.getElementById('install'); if (el) el.outerHTML = installCard(); }
 
@@ -246,6 +249,28 @@ function viewFavs() {
   window.scrollTo(0, 0);
 }
 
+async function copyLink() {
+  const url = location.origin + location.pathname;
+  try { await navigator.clipboard.writeText(url); toast('Lien copié : collez-le dans votre navigateur'); }
+  catch (e) { const t = document.createElement('input'); t.value = url; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); toast('Lien copié'); } catch (e2) { toast(url); } t.remove(); }
+}
+function viewInstall() {
+  document.body.classList.remove('reading');
+  header('Installer l’application', { back: true }); setTabs('');
+  const steps = (title, list, active) => `<section class="guide${active ? ' me' : ''}"><h3>${title}${active ? ' <span class="you">votre téléphone</span>' : ''}</h3><ol>${list.map(x => `<li>${x}</li>`).join('')}</ol></section>`;
+  const ios = ['Ouvrez ce site dans <b>Safari</b> (pas dans WhatsApp, Facebook ou Chrome).', 'Touchez le bouton <b>Partager</b> (un carré avec une flèche vers le haut), en bas de l’écran.', 'Faites défiler et touchez <b>« Sur l’écran d’accueil »</b>.', 'Touchez <b>Ajouter</b>. L’icône apparaît sur votre écran d’accueil.'];
+  const and = ['Ouvrez ce site dans <b>Chrome</b> (pas dans WhatsApp ou Facebook).', 'Touchez le bouton <b>Installer</b> de l’accueil, ou le menu <b>⋮</b> puis <b>« Installer l’application »</b> (ou « Ajouter à l’écran d’accueil »).', 'Confirmez : l’icône apparaît parmi vos applications.'];
+  const pc = ['Dans Chrome ou Edge, cliquez sur l’icône <b>Installer</b> à droite de la barre d’adresse, ou menu <b>⋮</b> → « Installer… ».'];
+  const web = ['Si vous êtes dans WhatsApp, Facebook, Telegram ou Instagram : touchez <b>⋮</b> ou <b>⎋</b> puis <b>« Ouvrir dans le navigateur »</b>.', 'Sinon, touchez <b>Copier le lien</b> ci-dessous et collez-le dans Chrome (Android) ou Safari (iPhone).'];
+  view.innerHTML = `<p class="foot" style="text-align:left;margin:0 0 12px">L’application s’ouvre aussi directement dans le navigateur, sans installation, et fonctionne alors hors ligne dès la première visite.</p>
+    ${inAppBrowser ? steps('Vous êtes dans une autre application', web, true) : ''}
+    ${steps('iPhone / iPad', ios, isIOS && !inAppBrowser)}
+    ${steps('Android', and, isAndroid && !inAppBrowser)}
+    ${steps('Ordinateur', pc, !isIOS && !isAndroid)}
+    <div class="guide-actions"><button class="btn" data-act="copylink">Copier le lien du site</button>${isAndroid ? '<button class="btn sec" data-act="openchrome">Ouvrir dans Chrome</button>' : ''}</div>`;
+  window.scrollTo(0, 0);
+}
+
 let dir = 1;
 function viewSong(n) {
   const s = BY.get(+n);
@@ -289,7 +314,7 @@ function route() {
     if (!bookAvailable(r.book.id)) { location.replace('#/'); return; }
     useBook(r.book);
     document.title = BOOK.name + ' — Cantiques';
-    ({ '': viewHome, liste: viewListe, themes: viewThemes, favoris: viewFavs }[r.p] ||
+    ({ '': viewHome, liste: viewListe, themes: viewThemes, favoris: viewFavs, installer: viewInstall }[r.p] ||
      ({ c: viewSong, serie: viewSerie, theme: viewTheme }[r.p]) || viewHome)(r.a);
   };
   r.book.id in DATA ? show() : loadBook(r.book).then(show);
@@ -310,6 +335,8 @@ document.addEventListener('click', e => {
     case 'clear': { const q = $('#q'); q.value = ''; q.dispatchEvent(new Event('input')); q.focus(); } break;
     case 'prefs': openPrefs(); break;
     case 'install': if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then(() => { deferredPrompt = null; refreshInstall(); }); } break;
+    case 'openchrome': location.href = chromeIntent(); setTimeout(() => toast('Si rien ne s’ouvre : menu ⋮ → Ouvrir dans le navigateur'), 1500); break;
+    case 'copylink': copyLink(); break;
     case 'hideinstall': store.set('hideInstall', true); { const i = document.getElementById('install'); if (i) i.remove(); } break;
   }
 });
@@ -331,7 +358,7 @@ function openPrefs() {
     <div class="row"><label>Police</label>${seg('font', [['serif', 'Livre (serif)'], ['sans', 'Moderne']])}</div>
     ${reading ? `<div class="row"><label>Lecture</label>${seg('big', [[0, 'Normal'], [1, 'Grand écran (chantre)']])}</div>` : ''}
     <div class="row"><label>Écran</label>${seg('wake', [[false, 'Veille normale'], [true, 'Garder allumé']])}</div>
-    <button class="btn" style="width:100%;margin-top:6px" data-act-close>Terminé</button></div>`;
+    <a class="lnk" href="#/installer" data-act-close style="display:block;text-align:center;margin:10px 0">Installer l’application</a><button class="btn" style="width:100%;margin-top:6px" data-act-close>Terminé</button></div>`;
   sh.hidden = false;
   sh.querySelector('#fs').oninput = e => { prefs.fs = +e.target.value; savePrefs(); applyPrefs(); };
   sh.onclick = e => {
@@ -383,5 +410,6 @@ if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
   let reloaded = false;
   navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !reloaded) { reloaded = true; location.reload(); } });
   addEventListener('load', () => navigator.serviceWorker.register('sw.js').then(r => r.update && r.update()).catch(() => {}));
+  navigator.serviceWorker.ready.then(() => { if (!store.get('offlineOk', false)) { store.set('offlineOk', true); setTimeout(() => toast('Disponible hors ligne ✓'), 800); } }).catch(() => {});
 }
 })();
