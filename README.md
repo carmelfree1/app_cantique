@@ -40,3 +40,8 @@ Pour l'ajouter à partir d'un scan :
 2. relire et corriger `brut.txt`, au format décrit dans `tools/build_recueil.py` ;
 3. `python tools/build_recueil.py brut.txt` crée `recueil2.json` et `recueil2.local.js` ;
 4. changer `VERSION` dans `sw.js`, puis publier.
+
+## Contenu du second recueil
+`recueil2.json` a été produit à partir du document `Recueil_cantiques_reprise_manuelle_pages_59_70.docx`
+(579 cantiques, numéros 1 à 662). Les cantiques dont le texte est incertain affichent un avertissement ;
+la liste complète est dans `docs/Passages_a_verifier_recueil2.txt`.

@@ -142,7 +142,7 @@ function mark(text, q) {
 
 // ---------- vues ----------
 const view = $('#view'), top = $('#top'), tabs = $('#tabs');
-const tabsFor = () => [[P, 'Accueil', 'home'], [P + 'liste', 'Titres', 'list'], [P + 'themes', 'Thèmes', 'tag'], [P + 'favoris', 'Favoris', 'star']];
+const tabsFor = () => [[P, 'Accueil', 'home'], [P + 'liste', 'Titres', 'list']].concat(CATS && CATS.length > 1 ? [[P + 'themes', 'Thèmes', 'tag']] : [], [[P + 'favoris', 'Favoris', 'star']]);
 
 function setTabs(active) {
   tabs.innerHTML = tabsFor().map(([h, l, i]) => `<a href="${h}" class="${h === active ? 'on' : ''}">${svg(i)}${l}</a>`).join('');
@@ -195,7 +195,7 @@ function viewHome() {
   $('#goto').addEventListener('submit', e => {
     e.preventDefault();
     const n = +$('#gn').value;
-    BY.has(n) ? (location.hash = P + 'c/' + n) : toast(n === 666 ? 'Le n° 666 est absent du recueil' : 'Numéro introuvable');
+    BY.has(n) ? (location.hash = P + 'c/' + n) : toast(BOOK.id === '1' && n === 666 ? 'Le n° 666 est absent du recueil' : 'Numéro introuvable dans ce recueil');
   });
 }
 
@@ -271,7 +271,8 @@ function viewSong(n) {
   view.innerHTML = `<article class="book ${dir < 0 ? 'back' : ''}">
       <span class="num">${pad(s.n)}</span>
       <h2>${esc(s.t)}</h2>
-      <div class="meta"><span class="bk-badge">${esc(BOOK.name)}</span> ${esc(CATS[s.c] || '')}${s.r ? ' · ' + esc(s.r) : ''}</div>
+      <div class="meta"><span class="bk-badge">${esc(BOOK.name)}</span> ${CATS.length > 1 ? esc(CATS[s.c] || '') : ''}${s.r ? ' · ' + esc(s.r) : ''}</div>
+      ${s.v ? '<p class="check">⚠ Transcription à vérifier sur l’original : certains mots ou passages sont incertains.</p>' : ''}
       ${body}
     </article>
     <div class="pager"><button data-go="${prev || ''}" ${prev ? '' : 'disabled'}>‹ ${prev ? pad(prev) : ''}</button><span>${i + 1} / ${NUMS.length}</span><button data-go="${next || ''}" ${next ? '' : 'disabled'}>${next ? pad(next) : ''} ›</button></div>

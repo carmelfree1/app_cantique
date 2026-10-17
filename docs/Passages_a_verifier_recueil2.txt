@@ -1,0 +1,257 @@
+RECUEIL CANTIQUES — PASSAGES ET POINTS À VÉRIFIER
+
+Fichier généré automatiquement à partir du document « Recueil_cantiques_reprise_manuelle_pages_59_70.docx ».
+
+1. BILAN
+  - Cantiques repris dans l’application : 579 (numéros de 1 à 662)
+  - Cantiques signalés « à vérifier » dans le document source : 82
+  - Cantiques sans aucune parole dans le document source (non repris) : 11, 288, 289, 290, 291, 292, 293, 294, 295, 320, 324, 660
+  - Numéros absents du recueil (pas de texte dans le document source) : 83 numéros
+
+2. NUMÉROTATION
+  Dans le document Word, les 28 premiers titres étaient décalés d’un rang par rapport aux numéros imprimés
+  du livre (« Jésus-Christ, ouvre-nous la porte » n’avait pas de numéro). Ils ont été remis sur les numéros du scan :
+  1 à 27 du Word -> 2 à 28 ; 28 du Word -> 30 ; le premier titre -> 1. À partir du 31, les numéros sont ceux du Word.
+
+3. NUMÉROS ABSENTS
+  11, 29, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 64, 103, 152, 164, 165, 166, 167, 168, 169, 215, 221, 246, 257, 259, 267, 273, 275, 288, 289, 290, 291, 292, 293, 294, 295, 301, 310, 312, 318, 319, 320, 324, 325, 337, 338, 341, 367, 396, 415, 449, 453, 466, 472, 476, 482, 489, 501, 526, 562, 587, 594, 596, 597, 606, 608, 610, 611, 612, 613, 618, 622, 623, 625, 626, 627, 629, 660
+
+4. NOTES DE CONTRÔLE DU DOCUMENT SOURCE
+  - Page 62 : le numéro 562 n’est pas lisible dans le scan entre les cantiques 561 et 563 ; aucun texte ne lui a été attribué.
+  - Page 62 : les cantiques 561 et 568 continuent sur la page suivante ; certaines lignes sont difficiles à distinguer et doivent être vérifiées sur l’original.
+  - Page 63 : les titres et paroles des cantiques 571 à 583 ont été retranscrits à partir des colonnes visibles ; des mots restent incertains dans plusieurs chants.
+  - Page 64 : le numéro 587 n’est pas visible dans le scan ; le cantique 588 (« Plonge-moi dans ta rivière d’amour ») est retranscrit selon le texte lisible. Certains mots restent à vérifier sur l’original.
+  - Page 65 : les numéros 594, 596 et 597 ne sont pas visibles dans les colonnes lues ; ils ne sont pas reconstitués. Plusieurs lignes des cantiques 593, 601 et 602 demandent une nouvelle vérification.
+  - Page 66 : certains numéros intermédiaires ne sont pas visibles dans le scan. Les titres 606, 608 et 610 à 613 ne sont pas attribués sans preuve visuelle.
+  - Page 67 : le cantique 629 n’est pas visible ; le titre du cantique 639 reste illisible. La suite du cantique 636 est rattachée au texte correspondant selon le scan.
+  - Page 68 : les paroles sont transcrites d’après les lignes lisibles ; quelques formulations anglaises/françaises peuvent nécessiter une vérification plus fine sur l’original.
+
+5. CANTIQUES À VÉRIFIER SUR LE SCAN, AVEC LES REMARQUES DU DOCUMENT SOURCE
+  n° 11 — Il y a une rivière
+      · Le texte de ce cantique est trop dégradé sur le scan pour être retranscrit avec certitude. À vérifier sur une copie plus nette.
+  n° 58 — Venez, chantez tous
+      · (Cantique à poursuivre : la suite se trouve sur la page suivante du scan.)
+  n° 68 — Dans ma vie
+      · (La suite du cantique se poursuit sur la colonne suivante du scan.)
+  n° 100 — Roi couvert de blessures
+      · (Texte continué sur la page suivante du scan.)
+  n° 108 — Au Nom de Jésus
+      · (Texte multilingue : plusieurs lignes sont conservées telles qu’elles apparaissent sur le scan ; certains mots restent à vérifier.)
+  n° 115 — Entre Tes mains, j’abandonne
+      · (Texte continué sur la page suivante du scan.)
+  n° 153 — Gloire à Son Nom
+      · (Texte continué sur la page suivante du scan.)
+  n° 213 — J’ai un Père dans l’au-delà
+      · AJOUT — PAGE 30 DU SCAN
+      · Cantiques lisibles sur cette page : 214 à 224, avec des numéros absents du scan fourni (215 et 221). La transcription suit le texte visible ; quelques mots restent incertains à cause de la qualité du scan.
+  n° 236 — TES SAINTS, DANS LA LUTTE
+      · Texte partiel : C’est toi qui la coins [mot à vérifier sur l’original],
+  n° 237 — QUAND LES RACHETÉS S’Y ASSEMBLERONT
+      · [La suite du cantique est à poursuivre sur la page suivante.]
+  n° 238 — JUSQU’À LA MORT (suite)
+      · Mot ou passage incertain : « Le libro [lecture incertaine] d’un peuple racheté ; »
+      · Mot ou passage incertain : « Pour Toi, Jésus, en est heureux de vivre [lecture incertaine], »
+  n° 239 — IL M’A SORTI (Key of D)
+      · Mot ou passage incertain : « Mon cœur angoissé sous Toi s’abîmait [lecture incertaine], »
+  n° 241 — BOLINGO YA NZAMBE
+      · Mot ou passage incertain : « Tika li[k]o limb[o]la te [lecture incertaine] »
+      · Mot ou passage incertain : « Kie elekeli mokweyi [lecture incertaine] »
+      · Mot ou passage incertain : « Ndenge mokili oyo ekoloka [lecture incertaine] »
+      · Mot ou passage incertain : « Ata mpo balo basambeli te [lecture incertaine] »
+      · Mot ou passage incertain : « Wana nzoto nyonso ekomoli [lecture incertaine] »
+  n° 242 — KAMATA NKOMBO NA YESU
+      · Mot ou passage incertain : « Bipai nyonso okotende [lecture incertaine] »
+      · Mot ou passage incertain : « Soki masenginya mayei [lecture incertaine] »
+      · Mot ou passage incertain : « Ekomabaka ye biso [lecture incertaine] »
+  n° 254 — TOUT AU LONG DU VOYAGE
+      · Note de transcription — Page 33 : le numéro 246 n’apparaît pas sur le scan fourni. Les passages en lingala et certains mots peu nets sont à vérifier sur l’original.
+  n° 265 — NOUS TRAVAILLERONS JUSQU’À CE QUE JÉSUS VIENNE
+      · Note de transcription — Page 34 : les numéros 257 et 259 ne sont pas visibles sur le scan fourni. Certains mots de cette page restent incertains en raison de la qualité de l’image ; comparer avec l’original pour validati
+      · Ajout de la page 35 du scan — transcription manuelle ; certains passages sont à vérifier sur l’original.
+  n° 276 — NOUS ATTENDONS LE SAUVEUR
+      · AJOUT — PAGE 36 DU SCAN
+  n° 280 — TERRE ÉPOUSE (suite à la page suivante)
+      · (Le cantique continue sur la page suivante.)
+  n° 282 — Oh ! que tes pieds sont beaux sur les montagnes
+      · Titre non lisible : « [titre non visible sur le scan] »
+  n° 284 — SAINTS MESSAGERS (début visible)
+      · (Le texte continue sur la page suivante.)
+  n° 285 — BÉNIS, SEIGNEUR TES MESSAGERS
+      · Note de transcription : La page 36 contient des mots flous et certains titres ou numéros sont absents/coupés. Les passages douteux sont à vérifier sur le scan original ; la transcription n’est pas certifiée mot à mot.
+      · AJOUT — PAGE 37 DU SCAN
+      · Cantiques repérés sur la page 37. La transcription complète de certains passages reste à vérifier sur le scan.
+  n° 286 — QU’ILS SONT BEAUX SUR LES MONTAGNES
+      · Texte à contrôler sur le scan original de la page 37.
+  n° 287 — IL EST UN PAYS MAGNIFIQUE
+      · Texte à contrôler sur le scan original de la page 37.
+  n° 288 — FILL MY CUP, LORD
+      · Texte à contrôler sur le scan original de la page 37.
+  n° 289 — HOLY SPIRIT, THOU ART WELCOME
+      · Texte à contrôler sur le scan original de la page 37.
+  n° 290 — JE VAIS À LA TERRE PROMISE
+      · Texte à contrôler sur le scan original de la page 37.
+  n° 291 — JE LE LOUERAI
+      · Texte à contrôler sur le scan original de la page 37.
+  n° 292 — LA ROUTE DU CIEL
+      · Texte à contrôler sur le scan original de la page 37.
+  n° 293 — LE SIGNAL DE LA VICTOIRE
+      · Texte à contrôler sur le scan original de la page 37.
+  n° 294 — C’EST EN MON CŒUR
+      · Texte à contrôler sur le scan original de la page 37.
+  n° 295 — PUBLIEZ BIEN HAUT
+      · Texte à contrôler sur le scan original de la page 37.
+      · AJOUT — PAGE 38 DU SCAN
+      · Retranscription des cantiques visibles sur la page 38. Les continuations sont regroupées sous leur numéro lorsqu’il est identifiable.
+  n° 302 — NOUS TE PRIONS, PÈRE CÉLESTE
+      · Note de contrôle : le numéro 301 n’est pas visible sur la page 38. Le passage sans titre situé avant le cantique 300 semble être la suite du cantique 299.
+  n° 303 — NOT TURNING BACK
+      · Mot ou passage incertain : « J’suis prédestiné de suivre le parage (mot à vérifier) »
+  n° 307 — RESTE AVEC NOUS SEIGNEUR
+      · Mot ou passage incertain : « Salant vainqueur nous tiendra sous son joug (mots à vérifier) »
+  n° 308 — DESCENDU DE SA GLOIRE (suite)
+      · (Le cantique porte la mention « Continued » : la suite doit être vérifiée sur la page suivante.)
+  n° 311 — NOTRE DIEU RÈGNE (suite)
+      · (Le texte indique « Continued » : suite à rechercher sur la page suivante.)
+  n° 314 — LELO ESENGO
+      · (Orthographe et plusieurs mots en lingala à vérifier sur le scan.)
+      · Note de contrôle — page 39 : les cantiques 310 et 312 ne sont pas visibles sur cette page. Les cantiques 308 et 311 portent une indication de continuation ; leurs suites seront recherchées sur la page suivante. Certains 
+      · AJOUT — PAGE 40 DU SCAN
+      · Cantiques relevés sur la page 40. La page montre les numéros 315–317, 320–324 et 326–328. Les paroles doivent être vérifiées sur l’image originale.
+  n° 315 — Ô, PREND MON ÂME
+      · Texte partiel : Ô prends mon âme, prends-la Seigneur. Que tout mon être vibre pour toi, sois seul mon Maître, ô Divin Roi. [Suite du texte à vérifier sur le scan.]
+  n° 316 — TU DOIS MARCHER ENCORE
+      · Texte partiel : Longtemps j’ai cherché la route pour la gloire. Hélas, je suis perdu, trouverai-je ce chemin ? [Refrain et suite à vérifier sur le scan.]
+  n° 317 — DANS CE MONDE PERVERS ET AGITÉ
+      · Texte partiel : Refrain : Jésus m’aime, il m’aime, il m’aime et il est mort pour moi. [Suite à vérifier sur le scan.]
+  n° 320 — BWANA UNIPELEKE
+      · Cantique en swahili. Orthographe et paroles à vérifier sur le scan original.
+  n° 321 — À LA CROIX AUX PIEDS DU MAÎTRE
+      · Texte partiel : À la croix aux pieds du Maître, à genoux, j’ai fait mon choix. Son disciple, je veux être, tout près de Lui, par la foi. [Suite à vérifier sur le scan.]
+  n° 322 — EL ELAH ELOHIM
+      · Texte partiel : Refrain : El Elah Elohim, comme nous aimons T’adorer. [Suite à vérifier sur le scan.]
+  n° 323 — TOUT CE QUE JE VEUX VOIR EN MOI
+      · Texte partiel : Oh, je sais le temps est proche où chaque chose que je tiens chère sera placée devant le Saint Feu de Dieu. [Suite à vérifier sur le scan.]
+  n° 324 — TSHILOBO
+      · Cantique en lingala. Paroles à vérifier sur le scan original.
+  n° 326 — I’LL NEVER BE THE SAME
+      · Texte partiel : Key of F. I’ll never be the same again, oh no. Since my life is changed, I’m not the same. [Suite à vérifier sur le scan.]
+  n° 327 — UN VÊTEMENT BLANC
+      · Texte partiel : Un vêtement blanc, une barre d’or, un beau palais, une couronne : la santé joie, la vraie trésor. [Paroles à vérifier sur le scan.]
+  n° 328 — DIS TOUT À JÉSUS
+      · Texte partiel : Es-tu lassé, rempli de tristesse ? Dis tout à Jésus. Son cœur est ouvert à ta voix sans cesse. Oh, dis tout à Jésus. [Suite à vérifier sur le scan.]
+      · Note de contrôle — page 40 : les numéros 318, 319, 325 ne sont pas visibles sur cette page. Les cantiques 320 et 324 sont en langues autres que le français et nécessitent une vérification attentive.
+      · AJOUT — PAGE 41 DU SCAN
+      · Transcription de travail des cantiques visibles sur la page 41. Les passages illisibles ou incomplets sont signalés plutôt que complétés par supposition.
+  n° 330 — MON SAUVEUR ME CONDUIT
+      · [Suite du cantique à vérifier sur le scan.]
+  n° 331 — LE SEIGNEUR M’A SAUVÉ (suite)
+      · [Le cantique se poursuit dans la colonne suivante ; certaines répétitions sont difficiles à distinguer.]
+  n° 333 — C’EST LE SEIGNEUR DE GLOIRE (suite)
+      · [Suite partiellement lisible : d’autres miracles et titres de Jésus sont énumérés.]
+  n° 334 — PÉCHEUR, JE VOUDRAIS TE GUÉRIR
+      · [Dernière reprise visible sur le scan : « Si tu n’as pas besoin de Moi… » ; fin à vérifier.]
+  n° 336 — LE CHRIST DÉVOILÉ
+      · Note de contrôle — page 41 : les cantiques 331 et 333 commencent sur cette page et sont des suites ; plusieurs mots restent à vérifier sur le scan original. Les numéros 318–328 ont été traités dans la version précédente 
+      · AJOUT — PAGE 42 DU SCAN
+      · Transcription de travail des cantiques visibles sur la page 42. Certains passages sont partiels ou à vérifier sur le scan original.
+  n° 340 — ÉLEVEZ-LE
+      · [Les strophes suivantes invitent à élever Jésus et à attirer les hommes à Lui ; vérifier le texte exact.]
+  n° 342 — BÉNI SOIT LE LIEN QUI UNIT
+      · [Suite sur la page suivante.]
+  n° 345 — Ô SEIGNEUR, BÉNIS LA PAROLE
+      · [Troisième strophe et suite à vérifier sur le scan.]
+  n° 347 — MARCHER SUR LE TAPIS
+      · [Dernières strophes à vérifier sur le scan.]
+  n° 350 — C’EST ASSEZ POUR
+      · [Dernière strophe en langue africaine : paroles à vérifier sur le scan.]
+      · Note de contrôle — page 42 : le numéro 341 n’est pas clairement visible sur le scan ; le cantique 342 continue sur la page suivante. Plusieurs lignes ont été transcrites avec prudence et doivent être comparées à l’origin
+  n° 370 — MON SAUVEUR SOUFFRIT SUR LA CROIX
+      · Note de transcription : page 43 du scan. Le cantique 353 est indiqué comme suite ; les numéros 357 à 365 et 367 ne figurent pas sur cette page. Plusieurs formulations proviennent d’un scan difficile à lire et doivent êtr
+  n° 381 — L’ANCIENNE PUISSANCE
+      · Note : pages 44 et 45 du scan ajoutées. Certaines paroles sont difficiles à lire et demandent une comparaison avec l’original ; les numéros ont été ajoutés dans l’ordre de lecture des pages, pas nécessairement dans l’ord
+      · AJOUT — PAGE 46 DU SCAN
+      · Cantiques 382 à 390. La qualité du scan rend certains mots incertains ; les formulations douteuses devront être vérifiées sur l’original.
+  n° 383 — ES-TU LAVÉ DANS LE SANG ?
+      · [Le cantique continue sur la page suivante.]
+  n° 384 — AMI DE JÉSUS
+      · [Le cantique continue sur la page suivante.]
+  n° 389 — RIEN QUE LE SANG DE JÉSUS
+      · [Le cantique continue sur la page suivante.]
+  n° 397 — AGNEAU DE DIEU, MESSAGER DE LA GRÂCE
+      · [Le cantique continue sur la page suivante.]
+  n° 405 — J’AI LONGTEMPS ERRÉ SANS GUIDE
+      · [Le cantique continue sur la page suivante.]
+  n° 407 — J’AI SOIF DE TA PRÉSENCE
+      · [Le cantique continue sur la page suivante.]
+  n° 409 — TEL QUE JE SUIS (2)
+      · [Le cantique continue sur la page suivante.]
+  n° 418 — À TOI LA GLOIRE
+      · [Le cantique continue sur la page suivante.]
+  n° 420 — QUEL AMI FIDÈLE ET TENDRE
+      · AJOUT — PAGE 50 DU SCAN
+      · Transcription poursuivie à partir de la page 50. Les lignes peu lisibles et les cantiques qui se poursuivent sur la page suivante doivent être vérifiés sur le scan original.
+  n° 423 — LE SANG DE JÉSUS
+      · [Le cantique se poursuit sur la page suivante.]
+  n° 433 — BIEN LOIN DE TOI, MON PÈRE
+      · AJOUT — PAGE 51 DU SCAN
+      · AJOUT — PAGE 52 DU SCAN
+      · AJOUT — PAGE 53 DU SCAN
+      · Transcription des pages suivantes. Les chants signalés comme continués doivent être complétés à partir de la page qui suit ; certains mots peu lisibles sont à contrôler sur le scan.
+  n° 436 — JE L’AI TROUVÉ
+      · [Le cantique continue sur la page suivante.]
+  n° 470 — MONT SION — KEY OF D
+      · [Le cantique continue sur la page suivante.]
+  n° 471 — JÉSUS ME DEMANDE D’ÊTRE
+      · AJOUT — PAGE 55 DU SCAN
+      · AJOUT — PAGE 56 DU SCAN
+      · AJOUT — PAGE 57 DU SCAN
+      · La page 54 du scan semble être un doublon de la page 53. La page 55 reprend au cantique 473 ; le numéro 472 n’est pas visible dans ces pages. Les paroles ci-dessous suivent le texte lisible du scan, avec certains passage
+  n° 494 — PARLE, MON SEIGNEUR
+      · [Le cantique continue sur la page suivante.]
+  n° 497 — À JÉSUS JE M’ABANDONNE
+      · [Le cantique continue sur la page suivante.]
+  n° 506 — JE NE VOULAI JAMAIS
+      · [Le cantique continue sur la page suivante.]
+  n° 514 — MATIN DE LA RÉSURRECTION
+      · (Suite sur la page suivante du recueil)
+  n° 517 — LE JOUR DE LA RÉDEMPTION EST PROCHE
+      · (Suite sur la page suivante du recueil)
+  n° 520 — NOUS SOMMES LE PEUPLE DE DIEU
+      · (Suite sur la page suivante du recueil)
+  n° 522 — JÉHOVAH EST SON NOM
+      · Mise à jour : ajout des cantiques visibles sur la page 58 du scan. Les chants indiqués « suite » se poursuivent sur la page suivante ; certains mots sont à vérifier sur l’original.
+      · REPRISE MANUELLE — PAGE 59 DU SCAN
+      · Transcription relue sur le scan original. La suite du cantique 525 est rattachée au même cantique. Les mots incertains sont signalés sans compléter par supposition.
+  n° 523 — La pitié de moi
+      · Mot ou passage incertain : « Au temps où soir mes amis [lecture incertaine], »
+  n° 525 — Mon espoir est en Jésus
+      · (Suite sur la même page)
+      · Mot ou passage incertain : « La pêche [lecture incertaine] est là, »
+  n° 533 — Rédempteur adorable
+      · Note de contrôle — page 59 : le numéro 526 n’est pas visible. Le passage placé après le refrain du cantique 525 semble en être la suite ; quelques mots ont été marqués comme incertains plutôt que complétés par suppositio
+      · RETRANSCRIPTION MANUELLE — PAGE 60 DU SCAN
+      · Texte relu directement sur la page scannée. Les suites de cantiques sont rattachées à leur numéro ; les mots peu lisibles sont signalés.
+  n° 540 — L’amour de Dieu projeté — Key of D
+      · Mot ou passage incertain : « Mo falsant désir, [lecture incertaine] partout toute chose, »
+  n° 542 — Jésus, Tout-Puissant (suite)
+      · [Suite du cantique 542 — le texte continue dans la colonne suivante]
+      · Mot ou passage incertain : « Mon rocher… [fin de ligne peu lisible] »
+  n° 545 — Tout est accompli — Key of F
+      · Note de contrôle — page 60 : plusieurs lignes de la page sont peu lisibles, notamment dans les cantiques 540 et 542. Les passages incertains sont marqués pour éviter de les présenter comme certains.
+      · PAGE 61 — RETRANSCRIPTION MANUELLE
+      · Texte retranscrit à partir du scan. Les titres et paroles sont conservés au plus près de ce qui est lisible ; les rares incertitudes orthographiques sont à contrôler sur l’original.
+  n° 558 — Descends, Doux Chariot ! — Key of Bb
+      · Note de contrôle — page 61 : Le titre du cantique 557 est lu comme « Le Dieu d’Élie est ici » d’après les paroles. Quelques accents et signes de ponctuation ont été normalisés ; vérifier l’orthographe exacte des expressi
+  n° 573 — L’heure de la Victoire
+      · (Le chant continue sur la page suivante.)
+  n° 574 — Combien Il est bon
+      · (Le chant continue sur la page suivante.)
+  n° 602 — Je louerai mon Dieu
+      · [Quelques lignes du scan sont trop floues pour être transcrites avec certitude.]
+  n° 639 — Nous voulons garder notre espérance
+      · [Le titre et quelques lignes sont difficiles à lire sur le scan.]
+      · Titre non lisible : « [Titre illisible sur le scan] »
+  n° 655 — Il a mis mes péchés dans la mer
+      · [Une ligne au milieu du cantique est trop floue pour être transcrite avec certitude.]
+  n° 660 — Recueil / Sion Tabernacle
+      · Le scan porte ici la mention « RECUEIL — SION TABERNACLE ». Aucune parole de cantique n’est visible sous ce numéro sur la page.
