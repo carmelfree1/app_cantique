@@ -17,8 +17,7 @@ Format du fichier texte (un cantique par bloc) :
 - Une strophe dont la première ligne commence par « ~ » est un refrain.
 - Une ligne « @ remarque » est ignorée (pratique pour noter « à vérifier »).
 
-Utilisation :  python tools/build_recueil.py mon_recueil.txt ["Anonyme"]
-(le second argument donne l'auteur par défaut des cantiques sans auteur indiqué)
+Utilisation :  python tools/build_recueil.py mon_recueil.txt
 """
 import io, json, re, sys
 
@@ -58,7 +57,7 @@ def parse(text):
     return [s for s in songs if s['s']]
 
 
-def main(path, auteur_defaut=''):
+def main(path):
     songs = parse(io.open(path, encoding='utf8').read())
     seen = set()
     for s in songs:
@@ -67,8 +66,6 @@ def main(path, auteur_defaut=''):
         seen.add(s['n'])
     songs.sort(key=lambda s: s['n'])
     data = {'categories': ['Recueil'], 'cantiques': songs}
-    if auteur_defaut:
-        data['auteur_defaut'] = auteur_defaut
     js = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
     io.open('recueil2.json', 'w', encoding='utf8').write(js)
     io.open('recueil2.local.js', 'w', encoding='utf8').write('window.__RECUEIL2=' + js + ';\n')
@@ -77,6 +74,6 @@ def main(path, auteur_defaut=''):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) not in (2, 3):
+    if len(sys.argv) != 2:
         sys.exit(__doc__)
-    main(sys.argv[1], sys.argv[2] if len(sys.argv) == 3 else '')
+    main(sys.argv[1])
