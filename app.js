@@ -19,7 +19,7 @@ function loadBook(b) {
   return get.then(d => {
     const songs = d.cantiques || [];
     if (!songs.length) throw new Error('vide');
-    for (const s of songs) { s.nt = norm(s.t); s.nb = norm(s.s.map(x => x[1].join(' ')).join(' ')); s.na = s.a ? norm(s.a) : ''; }
+    for (const s of songs) { s.nt = norm(s.t); s.nb = norm(s.s.map(x => x[1].join(' ')).join(' ')); }
     const nums = songs.map(s => s.n);
     return (DATA[b.id] = { songs, cats: d.categories || [], by: new Map(songs.map(s => [s.n, s])), nums, max: nums[nums.length - 1] });
   }).catch(() => (DATA[b.id] = null));
@@ -116,8 +116,7 @@ function search(q) {
     if (String(s.n) === q.trim() || pad(s.n) === q.trim()) score += 1000;
     let ok = true;
     for (const w of words) {
-      if (s.na && s.na.includes(w)) score += 15;
-      else if (s.nt.includes(w)) score += s.nt.startsWith(w) ? 30 : 20;
+      if (s.nt.includes(w)) score += s.nt.startsWith(w) ? 30 : 20;
       else if (s.nb.includes(w)) score += 5;
       else { ok = false; break; }
     }
@@ -154,7 +153,7 @@ function header(title, { back, actions = '' } = {}) {
 }
 function row(s, q = '') {
   const sn = q ? snippet(s, q) : '';
-  return `<a href="${P}c/${s.n}"><span class="n">${pad(s.n)}</span><span class="t">${q ? mark(s.t, q) : esc(s.t)}${sn ? `<small>${mark(sn, q)}</small>` : (s.a ? `<small>${esc(s.a)}</small>` : '')}</span>${favs.has(s.n) ? '<span class="star">★</span>' : ''}</a>`;
+  return `<a href="${P}c/${s.n}"><span class="n">${pad(s.n)}</span><span class="t">${q ? mark(s.t, q) : esc(s.t)}${sn ? `<small>${mark(sn, q)}</small>` : ''}</span>${favs.has(s.n) ? '<span class="star">★</span>' : ''}</a>`;
 }
 
 function viewHome() {
@@ -273,7 +272,6 @@ function viewSong(n) {
       <span class="num">${pad(s.n)}</span>
       <h2>${esc(s.t)}</h2>
       <div class="meta"><span class="bk-badge">${esc(BOOK.name)}</span> ${esc(CATS[s.c] || '')}${s.r ? ' · ' + esc(s.r) : ''}</div>
-      ${s.a ? `<div class="auth">Auteur : ${esc(s.a)}</div>` : ''}
       ${body}
     </article>
     <div class="pager"><button data-go="${prev || ''}" ${prev ? '' : 'disabled'}>‹ ${prev ? pad(prev) : ''}</button><span>${i + 1} / ${NUMS.length}</span><button data-go="${next || ''}" ${next ? '' : 'disabled'}>${next ? pad(next) : ''} ›</button></div>

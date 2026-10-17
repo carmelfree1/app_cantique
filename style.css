@@ -109,4 +109,3 @@ body[data-book="2"]{--accent:#1f5a7a}
 .books a.b2{border-left:6px solid #1f5a7a}
 .books a.on{border-color:var(--accent);background:var(--paper)}
 .bk-badge{display:inline-block;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:1px 9px;margin-right:6px;font-weight:600}
-.auth{color:var(--muted);font:italic .8em var(--read);margin:-.6em 0 1.1em}
