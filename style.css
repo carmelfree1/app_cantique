@@ -1,7 +1,11 @@
+@font-face{font-family:'Lora';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/lora-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Lora';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/lora-latin-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Lora';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/lora-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Lora';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/lora-latin-700-normal.woff2) format('woff2')}
 :root{
   --bg:#f6f0e4;--paper:#fffaf0;--ink:#2a211b;--muted:#7b6d60;--line:#e2d6c0;
   --accent:#7a1f2b;--accent-ink:#fff;--chip:#efe4cd;--shadow:0 2px 14px rgba(60,35,10,.12);
-  --fs:19px;--serif:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,'Times New Roman',serif;
+  --fs:19px;--serif:'Lora',Georgia,'Iowan Old Style','Palatino Linotype',Palatino,'Times New Roman',serif;
   --sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--read:var(--serif);
   --sat:env(safe-area-inset-top);--sab:env(safe-area-inset-bottom);
 }
@@ -120,3 +124,5 @@ body[data-book="2"]{--accent:#1f5a7a}
 .guide li{margin:.3em 0}
 .guide-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
 .btn.sec{background:var(--chip);color:var(--ink);border:1px solid var(--line)}
+.btn.ico{display:inline-flex;align-items:center;gap:8px}
+.btn.ico svg.i{width:20px;height:20px}

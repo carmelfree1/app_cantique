@@ -54,6 +54,7 @@ const ICON = {
   tag: '<path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1"/>', star: '<path d="M12 3l2.8 5.8 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.3l1-6.2L3 9.7l6.2-.9z"/>',
   back: '<path d="M15 18l-6-6 6-6"/>', text: '<path d="M4 20l6-16 6 16M6.5 14h7M17 12h4M19 10v4"/>',
   share: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.7 10.7l6.6-4.4M8.7 13.3l6.6 4.4"/>',
+  shuffle: '<path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>',
   search: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>'
 };
 const svg = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
@@ -178,7 +179,7 @@ function viewHome() {
       <h2 class="sec">Parcourir le recueil</h2>
       <div class="ranges">${ranges.join('')}</div>
       <h2 class="sec">Au hasard</h2>
-      <button class="btn" data-act="random">🎲 Un cantique surprise</button>
+      <button class="btn ico" data-act="random">${svg('shuffle')}Un cantique surprise</button>
       <p class="foot">${SONGS.length} cantiques · fonctionne hors ligne</p>
     </div>`;
   const q = $('#q'), res = $('#results'), home = $('#home'), x = view.querySelector('.x');
