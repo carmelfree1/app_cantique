@@ -3,7 +3,7 @@
 
 Format du fichier texte (un cantique par bloc) :
 
-    ## 12 | Titre du cantique
+    ## 12 | Titre du cantique | Nom de l'auteur   (l'auteur est facultatif)
     Première strophe, ligne 1
     Première strophe, ligne 2
 
@@ -33,10 +33,12 @@ def parse(text):
 
     for raw in text.splitlines():
         line = raw.rstrip()
-        m = re.match(r'^##\s*(\d+)\s*\|\s*(.+)$', line)
+        m = re.match(r'^##\s*(\d+)\s*\|\s*([^|]+?)\s*(?:\|\s*(.+))?$', line)
         if m:
             close_stanza()
             cur = {'n': int(m.group(1)), 't': m.group(2).strip(), 'c': 0, 's': []}
+            if m.group(3):
+                cur['a'] = m.group(3).strip()
             songs.append(cur)
             continue
         if cur is None or line.startswith('@'):
