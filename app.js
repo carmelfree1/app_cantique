@@ -2,6 +2,44 @@
 'use strict';
 let SONGS, CATS, BY, NUMS, MAX = 935;
 
+// ---------- les recueils ----------
+// Chaque recueil a son fichier de données, sa couleur et sa propre numérotation.
+const BOOKS = [
+  { id: '1', slug: '', name: 'Louanges à Dieu', file: 'cantiques.json', local: 'cantiques.local.js', glob: '__CANTIQUES', favKey: 'favs', lastKey: 'last' },
+  { id: '2', slug: '2/', name: 'Recueil Cantiques', file: 'recueil2.json', local: 'recueil2.local.js', glob: '__RECUEIL2', favKey: 'favs2', lastKey: 'last2' }
+];
+const DATA = {};      // id -> { songs, cats, by, nums, max } ou null si absent
+const FAVS = {};      // id -> Set
+let BOOK = BOOKS[0], P = '#/';
+function loadBook(b) {
+  if (b.id in DATA) return Promise.resolve(DATA[b.id]);
+  const get = location.protocol === 'file:'
+    ? new Promise((ok, ko) => { const s = document.createElement('script'); s.src = b.local; s.onload = () => (window[b.glob] ? ok(window[b.glob]) : ko()); s.onerror = ko; document.head.appendChild(s); })
+    : fetch(b.file).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  return get.then(d => {
+    const songs = d.cantiques || [];
+    if (!songs.length) throw new Error('vide');
+    for (const s of songs) { s.nt = norm(s.t); s.nb = norm(s.s.map(x => x[1].join(' ')).join(' ')); }
+    const nums = songs.map(s => s.n);
+    return (DATA[b.id] = { songs, cats: d.categories || [], by: new Map(songs.map(s => [s.n, s])), nums, max: nums[nums.length - 1] });
+  }).catch(() => (DATA[b.id] = null));
+}
+const bookAvailable = id => !!DATA[id];
+function useBook(b) {
+  const d = DATA[b.id];
+  BOOK = b; P = '#/' + b.slug;
+  SONGS = d.songs; CATS = d.cats; BY = d.by; NUMS = d.nums; MAX = d.max;
+  favs = FAVS[b.id] || (FAVS[b.id] = new Set(store.get(b.favKey, [])));
+  document.body.setAttribute('data-book', b.id);
+}
+function parseRoute() {
+  const seg = (location.hash || '#/').split('/').slice(1);
+  const book = seg[0] === '2' ? BOOKS[1] : BOOKS[0];
+  if (seg[0] === '2') seg.shift();
+  return { book, p: seg[0] || '', a: seg[1] };
+}
+const curNum = () => { const r = parseRoute(); return r.p === 'c' ? +r.a : NaN; };
+
 // ---------- utilitaires ----------
 const $ = s => document.querySelector(s);
 const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -25,8 +63,9 @@ function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('s
 
 // ---------- état persistant ----------
 let favs = new Set(store.get('favs', []));
+FAVS['1'] = favs;
 let prefs = Object.assign({ fs: 19, theme: 'auto', font: 'serif', wake: false }, store.get('prefs', {}));
-const saveFavs = () => store.set('favs', [...favs]);
+const saveFavs = () => store.set(BOOK.favKey, [...favs]);
 const savePrefs = () => store.set('prefs', prefs);
 
 function applyPrefs() {
@@ -60,6 +99,11 @@ function installCard() {
   return `<div class="install" id="install"><div>${msg}</div>${btn}<button class="x2" data-act="hideinstall" aria-label="Masquer">✕</button></div>`;
 }
 function refreshInstall() { const el = document.getElementById('install'); if (el) el.outerHTML = installCard(); }
+
+function booksSwitcher() {
+  if (!bookAvailable('2')) return '';
+  return '<div class="books">' + BOOKS.map(b => `<a href="#/${b.slug}" class="b${b.id}${b === BOOK ? ' on' : ''}"><b>${esc(b.name)}</b><small>${DATA[b.id].songs.length} cantiques</small></a>`).join('') + '</div>';
+}
 
 // ---------- recherche ----------
 function search(q) {
@@ -98,10 +142,10 @@ function mark(text, q) {
 
 // ---------- vues ----------
 const view = $('#view'), top = $('#top'), tabs = $('#tabs');
-const TABS = [['#/', 'Accueil', 'home'], ['#/liste', 'Titres', 'list'], ['#/themes', 'Thèmes', 'tag'], ['#/favoris', 'Favoris', 'star']];
+const tabsFor = () => [[P, 'Accueil', 'home'], [P + 'liste', 'Titres', 'list'], [P + 'themes', 'Thèmes', 'tag'], [P + 'favoris', 'Favoris', 'star']];
 
 function setTabs(active) {
-  tabs.innerHTML = TABS.map(([h, l, i]) => `<a href="${h}" class="${h === active ? 'on' : ''}">${svg(i)}${l}</a>`).join('');
+  tabs.innerHTML = tabsFor().map(([h, l, i]) => `<a href="${h}" class="${h === active ? 'on' : ''}">${svg(i)}${l}</a>`).join('');
 }
 function header(title, { back, actions = '' } = {}) {
   top.innerHTML = (back ? `<button class="ib" data-act="back" aria-label="Retour">${svg('back')}</button>` : '') +
@@ -109,21 +153,22 @@ function header(title, { back, actions = '' } = {}) {
 }
 function row(s, q = '') {
   const sn = q ? snippet(s, q) : '';
-  return `<a href="#/c/${s.n}"><span class="n">${pad(s.n)}</span><span class="t">${q ? mark(s.t, q) : esc(s.t)}${sn ? `<small>${mark(sn, q)}</small>` : ''}</span>${favs.has(s.n) ? '<span class="star">★</span>' : ''}</a>`;
+  return `<a href="${P}c/${s.n}"><span class="n">${pad(s.n)}</span><span class="t">${q ? mark(s.t, q) : esc(s.t)}${sn ? `<small>${mark(sn, q)}</small>` : ''}</span>${favs.has(s.n) ? '<span class="star">★</span>' : ''}</a>`;
 }
 
 function viewHome() {
   document.body.classList.remove('reading');
-  header('Louanges à Dieu', { actions: `<button class="ib" data-act="prefs" aria-label="Réglages">${svg('text')}</button>` });
-  setTabs('#/');
-  const last = store.get('last');
+  header(BOOK.name, { actions: `<button class="ib" data-act="prefs" aria-label="Réglages">${svg('text')}</button>` });
+  setTabs(P);
+  const last = store.get(BOOK.lastKey);
   const lastS = last && BY.get(last);
   const ranges = [];
-  for (let a = 1; a <= MAX; a += 100) ranges.push(`<a href="#/serie/${a}">${pad(a)}–${Math.min(a + 99, MAX)}</a>`);
+  for (let a = 1; a <= MAX; a += 100) ranges.push(`<a href="${P}serie/${a}">${pad(a)}–${Math.min(a + 99, MAX)}</a>`);
   view.innerHTML = `
     <div class="search"><input id="q" type="search" inputmode="search" placeholder="Titre, mot ou numéro…" autocomplete="off" aria-label="Recherche"><button class="x" data-act="clear" hidden aria-label="Effacer">✕</button></div>
     <div id="results"></div>
     <div id="home">
+      ${booksSwitcher()}
       ${installCard()}
       ${lastS ? `<button class="resume" data-go="${lastS.n}"><small>Reprendre la lecture</small><b>${pad(lastS.n)} · ${esc(lastS.t)}</b></button>` : ''}
       <form class="goto" id="goto"><input id="gn" type="number" min="1" max="${MAX}" inputmode="numeric" placeholder="Aller au cantique n°" aria-label="Numéro"><button class="btn">Ouvrir</button></form>
@@ -150,23 +195,23 @@ function viewHome() {
   $('#goto').addEventListener('submit', e => {
     e.preventDefault();
     const n = +$('#gn').value;
-    BY.has(n) ? (location.hash = '#/c/' + n) : toast(n === 666 ? 'Le n° 666 est absent du recueil' : 'Numéro introuvable');
+    BY.has(n) ? (location.hash = P + 'c/' + n) : toast(n === 666 ? 'Le n° 666 est absent du recueil' : 'Numéro introuvable');
   });
 }
 
 function viewSerie(a) {
   a = +a; const b = Math.min(a + 99, MAX);
   document.body.classList.remove('reading');
-  header(`${pad(a)} – ${b}`, { back: true }); setTabs('#/');
+  header(`${pad(a)} – ${b}`, { back: true }); setTabs(P);
   let h = '<div class="grid">';
-  for (let n = a; n <= b; n++) if (BY.has(n)) h += `<a href="#/c/${n}" class="${favs.has(n) ? 'fav' : ''}">${pad(n)}</a>`;
+  for (let n = a; n <= b; n++) if (BY.has(n)) h += `<a href="${P}c/${n}" class="${favs.has(n) ? 'fav' : ''}">${pad(n)}</a>`;
   view.innerHTML = h + '</div>';
   window.scrollTo(0, 0);
 }
 
 function viewListe() {
   document.body.classList.remove('reading');
-  header('Index des titres'); setTabs('#/liste');
+  header('Index des titres'); setTabs(P + 'liste');
   const sorted = [...SONGS].sort((x, y) => x.nt.localeCompare(y.nt, 'fr'));
   let h = '<div class="list">', cur = '';
   for (const s of sorted) {
@@ -180,21 +225,21 @@ function viewListe() {
 
 function viewThemes() {
   document.body.classList.remove('reading');
-  header('Thèmes'); setTabs('#/themes');
+  header('Thèmes'); setTabs(P + 'themes');
   const cnt = CATS.map((_, i) => SONGS.filter(s => s.c === i).length);
-  view.innerHTML = '<div class="themes">' + CATS.map((c, i) => cnt[i] ? `<a href="#/theme/${i}">${esc(c)}<span>${cnt[i]}</span></a>` : '').join('') + '</div>';
+  view.innerHTML = '<div class="themes">' + CATS.map((c, i) => cnt[i] ? `<a href="${P}theme/${i}">${esc(c)}<span>${cnt[i]}</span></a>` : '').join('') + '</div>';
   window.scrollTo(0, 0);
 }
 function viewTheme(i) {
   document.body.classList.remove('reading');
-  header(CATS[i] || 'Thème', { back: true }); setTabs('#/themes');
+  header(CATS[i] || 'Thème', { back: true }); setTabs(P + 'themes');
   view.innerHTML = '<div class="list">' + SONGS.filter(s => s.c === +i).map(s => row(s)).join('') + '</div>';
   window.scrollTo(0, 0);
 }
 
 function viewFavs() {
   document.body.classList.remove('reading');
-  header('Mes favoris'); setTabs('#/favoris');
+  header('Mes favoris'); setTabs(P + 'favoris');
   const l = SONGS.filter(s => favs.has(s.n));
   view.innerHTML = l.length ? '<div class="list">' + l.map(s => row(s)).join('') + '</div>'
     : '<div class="empty">Aucun favori pour l’instant.<br>Touchez l’étoile ★ en haut d’un cantique pour l’ajouter.</div>';
@@ -204,10 +249,10 @@ function viewFavs() {
 let dir = 1;
 function viewSong(n) {
   const s = BY.get(+n);
-  if (!s) { location.hash = '#/'; return; }
+  if (!s) { location.hash = P; return; }
   document.body.classList.add('reading');
-  store.set('last', s.n);
-  document.title = `${pad(s.n)} · ${s.t}`;
+  store.set(BOOK.lastKey, s.n);
+  document.title = `${pad(s.n)} · ${s.t} — ${BOOK.name}`;
   const i = NUMS.indexOf(s.n), prev = NUMS[i - 1], next = NUMS[i + 1];
   const fav = favs.has(s.n);
   header(`Cantique ${pad(s.n)}`, {
@@ -226,7 +271,7 @@ function viewSong(n) {
   view.innerHTML = `<article class="book ${dir < 0 ? 'back' : ''}">
       <span class="num">${pad(s.n)}</span>
       <h2>${esc(s.t)}</h2>
-      <div class="meta">${esc(CATS[s.c])}${s.r ? ' · ' + esc(s.r) : ''}</div>
+      <div class="meta"><span class="bk-badge">${esc(BOOK.name)}</span> ${esc(CATS[s.c] || '')}${s.r ? ' · ' + esc(s.r) : ''}</div>
       ${body}
     </article>
     <div class="pager"><button data-go="${prev || ''}" ${prev ? '' : 'disabled'}>‹ ${prev ? pad(prev) : ''}</button><span>${i + 1} / ${NUMS.length}</span><button data-go="${next || ''}" ${next ? '' : 'disabled'}>${next ? pad(next) : ''} ›</button></div>
@@ -238,24 +283,29 @@ function viewSong(n) {
 
 // ---------- routage ----------
 function route() {
-  const [, p, a] = (location.hash || '#/').split('/');
-  document.title = 'Louanges à Dieu — Cantiques';
-  ({ '': viewHome, undefined: viewHome, liste: viewListe, themes: viewThemes, favoris: viewFavs }[p] ||
-   ({ c: viewSong, serie: viewSerie, theme: viewTheme }[p]) || viewHome)(a);
+  const r = parseRoute();
+  const show = () => {
+    if (!bookAvailable(r.book.id)) { location.replace('#/'); return; }
+    useBook(r.book);
+    document.title = BOOK.name + ' — Cantiques';
+    ({ '': viewHome, liste: viewListe, themes: viewThemes, favoris: viewFavs }[r.p] ||
+     ({ c: viewSong, serie: viewSerie, theme: viewTheme }[r.p]) || viewHome)(r.a);
+  };
+  r.book.id in DATA ? show() : loadBook(r.book).then(show);
 }
 addEventListener('hashchange', route);
 
 // ---------- actions ----------
-function go(n) { if (!n) return; dir = n < (+location.hash.split('/')[2] || 0) ? -1 : 1; location.hash = '#/c/' + n; }
+function go(n) { if (!n) return; dir = n < (curNum() || 0) ? -1 : 1; location.hash = P + 'c/' + n; }
 document.addEventListener('click', e => {
   const el = e.target.closest('[data-act],[data-go],[data-set]'); if (!el) return;
   if (el.dataset.go) return go(+el.dataset.go);
-  const cur = +location.hash.split('/')[2];
+  const cur = curNum();
   switch (el.dataset.act) {
-    case 'back': history.length > 1 && !location.hash.startsWith('#/c/') ? history.back() : (location.hash.startsWith('#/c/') ? history.back() : (location.hash = '#/')); break;
+    case 'back': history.length > 1 ? history.back() : (location.hash = P); break;
     case 'fav': favs.has(cur) ? (favs.delete(cur), toast('Retiré des favoris')) : (favs.add(cur), toast('Ajouté aux favoris')); saveFavs(); el.classList.toggle('on', favs.has(cur)); break;
     case 'share': share(cur); break;
-    case 'random': location.hash = '#/c/' + NUMS[Math.random() * NUMS.length | 0]; break;
+    case 'random': location.hash = P + 'c/' + NUMS[Math.random() * NUMS.length | 0]; break;
     case 'clear': { const q = $('#q'); q.value = ''; q.dispatchEvent(new Event('input')); q.focus(); } break;
     case 'prefs': openPrefs(); break;
     case 'install': if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then(() => { deferredPrompt = null; refreshInstall(); }); } break;
@@ -309,31 +359,23 @@ view.addEventListener('touchend', e => {
   const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
   sx = null;
   if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.8 && Date.now() - st < 700) {
-    const cur = +location.hash.split('/')[2], i = NUMS.indexOf(cur);
+    const cur = curNum(), i = NUMS.indexOf(cur);
     dx < 0 ? go(NUMS[i + 1]) : go(NUMS[i - 1]);
   }
 }, { passive: true });
 addEventListener('keydown', e => {
   if (!document.body.classList.contains('reading') || /input|textarea/i.test(e.target.tagName)) return;
-  const cur = +location.hash.split('/')[2], i = NUMS.indexOf(cur);
+  const cur = curNum(), i = NUMS.indexOf(cur);
   if (e.key === 'ArrowRight') go(NUMS[i + 1]); else if (e.key === 'ArrowLeft') go(NUMS[i - 1]);
 });
 
 // ---------- démarrage et PWA ----------
 applyPrefs();
-// En ligne : fetch du JSON. En ouvrant le fichier directement (file://), fetch est bloqué :
-// on charge alors cantiques.local.js, qui contient exactement les mêmes données.
-const loadData = () => location.protocol === 'file:'
-  ? new Promise((ok, ko) => { const s = document.createElement('script'); s.src = 'cantiques.local.js'; s.onload = () => ok(window.__CANTIQUES); s.onerror = ko; document.head.appendChild(s); })
-  : fetch('cantiques.json').then(r => r.json());
-loadData().then(d => {
-  SONGS = d.cantiques; CATS = d.categories;
-  BY = new Map(SONGS.map(s => [s.n, s]));
-  NUMS = SONGS.map(s => s.n);
-  MAX = NUMS[NUMS.length - 1];
-  for (const s of SONGS) { s.nt = norm(s.t); s.nb = norm(s.s.map(b => b[1].join(' ')).join(' ')); }
-  route();
-}).catch(() => { view.innerHTML = '<div class="empty">Impossible de charger les cantiques.</div>'; });
+// Le premier recueil est obligatoire ; le second est facultatif (il n'apparaît que si son fichier existe).
+loadBook(BOOKS[0]).then(d => {
+  if (!d) { view.innerHTML = '<div class="empty">Impossible de charger les cantiques.</div>'; return; }
+  loadBook(BOOKS[1]).then(() => route());
+});
 if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
   // Quand une nouvelle version du recueil est installée, on recharge la page une seule fois.
   const hadController = !!navigator.serviceWorker.controller;

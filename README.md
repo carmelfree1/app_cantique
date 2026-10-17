@@ -29,3 +29,14 @@ sous la forme `window.__CANTIQUES=<contenu>;`. L'installation PWA et le hors-lig
 - **Android / Chrome, Edge, Samsung Internet** : bouton « Installer » dans l'application, ou menu ⋮ → « Installer l'application ».
 - **iPhone / iPad** : uniquement depuis **Safari** → Partager → « Sur l'écran d'accueil » (Chrome et les navigateurs intégrés à WhatsApp, Facebook, etc. ne savent pas installer sur iOS).
 - Le site doit être servi en **HTTPS**.
+
+## Deux recueils
+L'application sait afficher deux recueils **séparés**, chacun avec sa numérotation, ses favoris, sa couleur
+(bordeaux pour « Louanges à Dieu », bleu pour « Recueil Cantiques ») et un badge sur chaque cantique.
+Le second recueil n'apparaît que si le fichier `recueil2.json` existe (sinon l'application reste comme avant).
+
+Pour l'ajouter à partir d'un scan :
+1. `python tools/ocr_scan.py scan.pdf brut.txt` (Tesseract requis, voir l'en-tête du script) ;
+2. relire et corriger `brut.txt`, au format décrit dans `tools/build_recueil.py` ;
+3. `python tools/build_recueil.py brut.txt` crée `recueil2.json` et `recueil2.local.js` ;
+4. changer `VERSION` dans `sw.js`, puis publier.
