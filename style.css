@@ -108,3 +108,5 @@ body.big .st.r{border-left:0;padding-left:0;margin-left:0;background:none}
 .guide li{margin:.3em 0}
 .guide-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
 .btn.sec{background:var(--chip);color:var(--ink);border:1px solid var(--line)}
+.btn.ico{display:inline-flex;align-items:center;gap:8px}
+.btn.ico svg.i{width:20px;height:20px}
