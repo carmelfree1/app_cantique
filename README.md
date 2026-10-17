@@ -29,3 +29,9 @@ sous la forme `window.__CANTIQUES=<contenu>;`. L'installation PWA et le hors-lig
 - **Android / Chrome, Edge, Samsung Internet** : bouton « Installer » dans l'application, ou menu ⋮ → « Installer l'application ».
 - **iPhone / iPad** : uniquement depuis **Safari** → Partager → « Sur l'écran d'accueil » (Chrome et les navigateurs intégrés à WhatsApp, Facebook, etc. ne savent pas installer sur iOS).
 - Le site doit être servi en **HTTPS**.
+
+## Installation : ce qui est prévu pour les téléphones
+- L'application marche aussi **sans installation**, dans n'importe quel navigateur, et fonctionne hors ligne dès la première visite.
+- Guide pas à pas par téléphone : `#/installer` (aussi accessible depuis l'accueil et les réglages).
+- Dans le navigateur intégré de WhatsApp/Facebook (Android) : bouton « Ouvrir dans Chrome » ; sur iPhone : bouton « Copier le lien » à coller dans Safari.
+- `affiche.html` : affiche imprimable avec code QR vers le site (à scanner avec l'appareil photo, ce qui ouvre le vrai navigateur).
